@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/HFDS0821/pom.xml" />
+        <option value="$PROJECT_DIR$/MapReduce0821/pom.xml" />
+        <option value="$PROJECT_DIR$/Zookeeper0821/pom.xml" />
+        <option value="$PROJECT_DIR$/Hive0821/pom.xml" />
+        <option value="$PROJECT_DIR$/Flume0821/pom.xml" />
+        <option value="$PROJECT_DIR$/Kafka0821/pom.xml" />
+        <option value="$PROJECT_DIR$/Collect0821/pom.xml" />
+        <option value="$PROJECT_DIR$/Hbase0821/pom.xml" />
+        <option value="$PROJECT_DIR$/Phoenix0821/pom.xml" />
+        <option value="$PROJECT_DIR$/Redis0821/pom.xml" />
+        <option value="$PROJECT_DIR$/Spark0821/pom.xml" />
+        <option value="$PROJECT_DIR$/SparkCoreTest0821/pom.xml" />
+        <option value="$PROJECT_DIR$/SparkSQLTest0821/pom.xml" />
+        <option value="$PROJECT_DIR$/Hivefunction0821/pom.xml" />
+        <option value="$PROJECT_DIR$/SparkStreaming0821/pom.xml" />
+        <option value="$PROJECT_DIR$/Flink0821/pom.xml" />
+        <option value="$PROJECT_DIR$/Azkaban0821/pom.xml" />
+        <option value="$PROJECT_DIR$/YarnTool/pom.xml" />
+        <option value="$PROJECT_DIR$/Flink_0821/pom.xml" />
+        <option value="$PROJECT_DIR$/Scala_0821/pom.xml" />
+        <option value="$PROJECT_DIR$/momo_chat_app/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Flink0821/YarnDemo/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

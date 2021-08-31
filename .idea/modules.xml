@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Azkaban0821/Azkaban0821.iml" filepath="$PROJECT_DIR$/Azkaban0821/Azkaban0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Collect0821/Collect0821.iml" filepath="$PROJECT_DIR$/Collect0821/Collect0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flink0821/Flink0821.iml" filepath="$PROJECT_DIR$/Flink0821/Flink0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flink_0821/Flink_0821.iml" filepath="$PROJECT_DIR$/Flink_0821/Flink_0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flume0821/Flume0821.iml" filepath="$PROJECT_DIR$/Flume0821/Flume0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HFDS0821/HFDS0821.iml" filepath="$PROJECT_DIR$/HFDS0821/HFDS0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hbase0821/Hbase0821.iml" filepath="$PROJECT_DIR$/Hbase0821/Hbase0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hive0821/Hive0821.iml" filepath="$PROJECT_DIR$/Hive0821/Hive0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hivefunction0821/Hivefunction0821.iml" filepath="$PROJECT_DIR$/Hivefunction0821/Hivefunction0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Kafka0821/Kafka0821.iml" filepath="$PROJECT_DIR$/Kafka0821/Kafka0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MapReduce0821/MapReduce0821.iml" filepath="$PROJECT_DIR$/MapReduce0821/MapReduce0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Phoenix0821/Phoenix0821.iml" filepath="$PROJECT_DIR$/Phoenix0821/Phoenix0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Redis0821/Redis0821.iml" filepath="$PROJECT_DIR$/Redis0821/Redis0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Scala_0821/Scala_0821.iml" filepath="$PROJECT_DIR$/Scala_0821/Scala_0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spark0821/Spark0821.iml" filepath="$PROJECT_DIR$/Spark0821/Spark0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SparkCoreTest0821/SparkCoreTest0821.iml" filepath="$PROJECT_DIR$/SparkCoreTest0821/SparkCoreTest0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SparkSQLTest0821/SparkSQLTest0821.iml" filepath="$PROJECT_DIR$/SparkSQLTest0821/SparkSQLTest0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SparkStreaming0821/SparkStreaming0821.iml" filepath="$PROJECT_DIR$/SparkStreaming0821/SparkStreaming0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/YarnTool/YarnTool.iml" filepath="$PROJECT_DIR$/YarnTool/YarnTool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Zookeeper0821/Zookeeper0821.iml" filepath="$PROJECT_DIR$/Zookeeper0821/Zookeeper0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alerter/alerter.iml" filepath="$PROJECT_DIR$/alerter/alerter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/momo_chat_app/momo_chat_app.iml" filepath="$PROJECT_DIR$/momo_chat_app/momo_chat_app.iml" />
+    </modules>
+  </component>
+</project>

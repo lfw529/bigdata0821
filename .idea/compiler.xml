@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Flink_0821" />
+        <module name="SparkSQLTest0821" />
+        <module name="Hivefunction0821" />
+        <module name="SparkStreaming0821" />
+        <module name="Zookeeper0821" />
+        <module name="Phoenix0821" />
+        <module name="momo_chat_app" />
+        <module name="Redis0821" />
+        <module name="SparkCoreTest0821" />
+        <module name="Azkaban0821" />
+        <module name="HFDS0821" />
+        <module name="Scala_0821" />
+        <module name="Hbase0821" />
+        <module name="Hive0821" />
+        <module name="Kafka0821" />
+        <module name="Spark0821" />
+        <module name="MapReduce0821" />
+        <module name="Flume0821" />
+        <module name="Collect0821" />
+        <module name="YarnTool" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Azkaban0821" target="1.5" />
+      <module name="Collect0821" target="1.5" />
+      <module name="Flink0821" target="1.8" />
+      <module name="Flink_0821" target="1.5" />
+      <module name="Flume0821" target="1.5" />
+      <module name="hbase" target="1.8" />
+      <module name="Hbase0821" target="1.5" />
+      <module name="HFDS0821" target="1.5" />
+      <module name="Hive0821" target="1.5" />
+      <module name="Hivefunction0821" target="1.5" />
+      <module name="kafka0821" target="1.8" />
+      <module name="Kafka0821" target="1.5" />
+      <module name="MapReduce0821" target="1.5" />
+      <module name="momo_chat_app" target="1.5" />
+      <module name="Phoenix0821" target="1.5" />
+      <module name="Redis0821" target="1.5" />
+      <module name="Scala0821" target="1.8" />
+      <module name="Scala_0821" target="1.5" />
+      <module name="Spark0821" target="1.5" />
+      <module name="SparkCoreTest0821" target="1.5" />
+      <module name="SparkSQLTest0821" target="1.5" />
+      <module name="SparkStreaming0821" target="1.5" />
+      <module name="untitled1" target="1.8" />
+      <module name="YarnDemo" target="1.8" />
+      <module name="YarnTool" target="1.5" />
+      <module name="Zookeeper0821" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

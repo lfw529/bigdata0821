@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="alerter:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/alerter_jar</output-path>
+    <root id="archive" name="alerter.jar">
+      <element id="module-output" name="alerter" />
+    </root>
+  </artifact>
+</component>
