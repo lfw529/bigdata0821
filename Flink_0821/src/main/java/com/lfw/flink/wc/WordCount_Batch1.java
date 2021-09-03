@@ -13,7 +13,7 @@ public class WordCount_Batch1 {
         ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
 
         //从文件中读取数据
-        String inputPath = "D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\input.txt";
+        String inputPath = "Flink_0821/src/main/resources/input.txt";
         DataSet<String> inputDataSet = env.readTextFile(inputPath);
 
         //对数据集进行处理，按空格分词展开，转换成(word,1)二元组进行统计

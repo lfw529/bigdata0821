@@ -33,7 +33,7 @@ public class Practice_AdCount {
                         return element.getTimestamp() * 1000L;
                     }
                 });
-        SingleOutputStreamOperator<AdsClickLog> adsClickLogDS = env.readTextFile("D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\AdClickLog.csv")
+        SingleOutputStreamOperator<AdsClickLog> adsClickLogDS = env.readTextFile("E:\\IdeaProject\\bigdata0821\\Flink_0821\\src\\main\\resources\\AdClickLog.csv")
                 .map(data -> {
                     String[] split = data.split(",");
                     return new AdsClickLog(Long.parseLong(split[0]),

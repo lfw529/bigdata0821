@@ -15,7 +15,7 @@ public class WordCount_Bounded {
         //env.disableOperatorChaining();
 
         //读取文件创建流  //有状态
-        DataStreamSource<String> inputDataStream = env.readTextFile("D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\input.txt");
+        DataStreamSource<String> inputDataStream = env.readTextFile("Flink_0821/src/main/resources/input.txt");
         //基于数据流进行转换计算
         DataStream<Tuple2<String, Integer>> resultStream = inputDataStream.flatMap(new LineToTupleFlatMapFunc())
                 .keyBy(0)

@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Azkaban0821/Azkaban0821.iml" filepath="$PROJECT_DIR$/Azkaban0821/Azkaban0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/Collect0821/Collect0821.iml" filepath="$PROJECT_DIR$/Collect0821/Collect0821.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Flink0821/Flink0821.iml" filepath="$PROJECT_DIR$/Flink0821/Flink0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/Flink_0821/Flink_0821.iml" filepath="$PROJECT_DIR$/Flink_0821/Flink_0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/Flume0821/Flume0821.iml" filepath="$PROJECT_DIR$/Flume0821/Flume0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/HFDS0821/HFDS0821.iml" filepath="$PROJECT_DIR$/HFDS0821/HFDS0821.iml" />

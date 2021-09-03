@@ -12,7 +12,7 @@ public class WordCount_Batch2 {
     public static void main(String[] args) throws Exception {
         ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
 
-        DataSource<String> input = env.readTextFile("D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\input.txt");
+        DataSource<String> input = env.readTextFile("Flink_0821/src/main/resources/input.txt");
 
         FlatMapOperator<String, String> wordDS = input.flatMap(new MyFlatFunc());
 

@@ -33,7 +33,7 @@
       <module name="Azkaban0821" target="1.5" />
       <module name="Collect0821" target="1.5" />
       <module name="Flink0821" target="1.8" />
-      <module name="Flink_0821" target="1.5" />
+      <module name="Flink_0821" target="8" />
       <module name="Flume0821" target="1.5" />
       <module name="hbase" target="1.8" />
       <module name="Hbase0821" target="1.5" />
