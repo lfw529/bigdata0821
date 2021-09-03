@@ -14,7 +14,7 @@ public class PageView_Process {
         //1.获取执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //2.读取文本数据
-        DataStreamSource<String> readTextFile = env.readTextFile("D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\UserBehavior.csv");
+        DataStreamSource<String> readTextFile = env.readTextFile("Flink_0821/src/main/resources/UserBehavior.csv");
         //3.转换为JavaBean并过滤出PV数据
         SingleOutputStreamOperator<UserBehavior> userBehaviorDS = readTextFile.flatMap(new FlatMapFunction<String, UserBehavior>() {
             @Override
@@ -39,6 +39,7 @@ public class PageView_Process {
         //5.计算总和
         SingleOutputStreamOperator<Integer> result = keyedStream.process(new KeyedProcessFunction<String, UserBehavior, Integer>() {
             Integer count = 0;
+
             @Override
             public void processElement(UserBehavior value, Context ctx, Collector<Integer> out) throws Exception {
                 count++;

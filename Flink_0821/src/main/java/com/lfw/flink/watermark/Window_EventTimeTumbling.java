@@ -1,18 +1,17 @@
 package com.lfw.flink.watermark;
 
+import com.lfw.flink.bean.WaterSensor;
+import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
+import org.apache.flink.api.common.eventtime.WatermarkStrategy;
+import org.apache.flink.streaming.api.datastream.KeyedStream;
+import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
+import org.apache.flink.streaming.api.datastream.WindowedStream;
+import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import org.apache.flink.streaming.api.windowing.assigners.TumblingEventTimeWindows;
+import org.apache.flink.streaming.api.windowing.time.Time;
+import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
 
-        import com.lfw.flink.bean.WaterSensor;
-        import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
-        import org.apache.flink.api.common.eventtime.WatermarkStrategy;
-        import org.apache.flink.streaming.api.datastream.KeyedStream;
-        import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
-        import org.apache.flink.streaming.api.datastream.WindowedStream;
-        import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-        import org.apache.flink.streaming.api.windowing.assigners.TumblingEventTimeWindows;
-        import org.apache.flink.streaming.api.windowing.time.Time;
-        import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
-
-        import java.time.Duration;
+import java.time.Duration;
 
 public class Window_EventTimeTumbling {
     public static void main(String[] args) throws Exception {
@@ -21,7 +20,7 @@ public class Window_EventTimeTumbling {
         env.setParallelism(1);
 
         //2.读取端口数据并转换为JavaBean
-        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop105", 7777)
+        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop102", 7777)
                 .map(data -> {
                     String[] split = data.split(",");
                     return new WaterSensor(split[0], Long.parseLong(split[1]), Integer.parseInt(split[2]));

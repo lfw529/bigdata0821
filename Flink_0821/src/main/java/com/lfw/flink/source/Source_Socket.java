@@ -9,7 +9,7 @@ public class Source_Socket {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
         //2.从端口获取数据
-        DataStreamSource<String> socketTextStream = env.socketTextStream("hadoop105", 7777);
+        DataStreamSource<String> socketTextStream = env.socketTextStream("hadoop102", 7777);
         //3.打印数据
         socketTextStream.print();
         //4.执行任务

@@ -12,6 +12,7 @@ import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.co.KeyedCoProcessFunction;
 import org.apache.flink.util.Collector;
+
 import java.util.HashMap;
 
 public class OrderReceipt {
@@ -19,8 +20,8 @@ public class OrderReceipt {
         //1.获取执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //2.读取2个文本数据创建流
-        DataStreamSource<String> orderStreamDS = env.readTextFile("D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\OrderLog.csv");
-        DataStreamSource<String> receiptStreamDS = env.readTextFile("D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\ReceiptLog.csv");
+        DataStreamSource<String> orderStreamDS = env.readTextFile("Flink_0821/src/main/resources/OrderLog.csv");
+        DataStreamSource<String> receiptStreamDS = env.readTextFile("Flink_0821/src/main/resources/ReceiptLog.csv");
         //3.转换为JavaBean
         SingleOutputStreamOperator<OrderEvent> orderEventDS = orderStreamDS.flatMap(new FlatMapFunction<String, OrderEvent>() {
             @Override

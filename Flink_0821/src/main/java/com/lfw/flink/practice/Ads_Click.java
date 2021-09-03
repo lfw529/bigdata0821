@@ -9,7 +9,7 @@ import static org.apache.flink.api.common.typeinfo.Types.*;
 public class Ads_Click {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.readTextFile("D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\AdClickLog.csv")
+        env.readTextFile("Flink_0821/src/main/resources/AdClickLog.csv")
                 .map(line -> {
                     String[] datas = line.split(",");
                     return new AdsClickLog(
@@ -31,3 +31,4 @@ public class Ads_Click {
         env.execute();
     }
 }
+

@@ -13,7 +13,7 @@ public class RunMode_Stream {
         //1.获取执行环境(默认使用的为流的模式)
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //2.读取文本数据
-        DataStreamSource<String> readTextFile = env.readTextFile("D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\input.txt");
+        DataStreamSource<String> readTextFile = env.readTextFile("Flink_0821/src/main/resources/input.txt");
         //3.压平并转换为元组
         SingleOutputStreamOperator<Tuple2<String, Integer>> wordToOne = readTextFile.flatMap(new FlatMapFunction<String, Tuple2<String, Integer>>() {
             @Override

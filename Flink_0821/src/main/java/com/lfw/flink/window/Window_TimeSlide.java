@@ -20,7 +20,7 @@ public class Window_TimeSlide {
         env.setParallelism(1);
 
         //2.读取端口数据
-        DataStreamSource<String> socketTextStream = env.socketTextStream("hadoop105", 7777);
+        DataStreamSource<String> socketTextStream = env.socketTextStream("hadoop102", 7777);
 
         //3.压平并转换为数组
         SingleOutputStreamOperator<Tuple2<String, Integer>> wordToOneDS = socketTextStream.flatMap(new FlatMapFunction<String, Tuple2<String, Integer>>() {

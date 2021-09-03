@@ -4,6 +4,7 @@ import com.lfw.flink.bean.WaterSensor;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.source.SourceFunction;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -17,7 +18,7 @@ public class Source_MySource {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
         //2.从自定义的数据源中加载数据
-        DataStreamSource<WaterSensor> dataStreamSource = env.addSource(new MySource("hadoop105", 7777));
+        DataStreamSource<WaterSensor> dataStreamSource = env.addSource(new MySource("hadoop102", 7777));
         //3.打印结果数据
         dataStreamSource.print();
         env.execute();

@@ -17,7 +17,7 @@ public class Window_EventTimeTumbling_CustomerPeriod {
         env.setParallelism(1);
 
         //2.读取接口数据并转换为JavaBean
-        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop105", 7777)
+        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop102", 7777)
                 .map(data -> {
                     String[] split = data.split(",");
                     return new WaterSensor(split[0], Long.parseLong(split[1]), Integer.parseInt(split[2]));

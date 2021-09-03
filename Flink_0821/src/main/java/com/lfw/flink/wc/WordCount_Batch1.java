@@ -30,7 +30,7 @@ public class WordCount_Batch1 {
         public void flatMap(String value, Collector<Tuple2<String, Integer>> out) throws Exception {
             //按空格分词
             String[] words = value.split(" ");
-            //遍历所有word,宝成二元组输出
+            //遍历所有word,变成二元组输出
             for (String word : words) {
                 out.collect(new Tuple2<>(word, 1));
             }

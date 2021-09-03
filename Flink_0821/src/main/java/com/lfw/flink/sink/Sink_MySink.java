@@ -17,7 +17,7 @@ public class Sink_MySink {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
         //2.读取端口数据并转换为JavaBean
-        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop105", 8888)
+        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop102", 8888)
                 .map(new MapFunction<String, WaterSensor>() {
                     @Override
                     public WaterSensor map(String value) throws Exception {
@@ -42,7 +42,7 @@ public class Sink_MySink {
         //生命周期方法，用于创建连接
         @Override
         public void open(Configuration preparedmeter) throws Exception {
-            connection = DriverManager.getConnection("jdbc:mysql://hadoop105:3306/test?useSSL=false", "root", "1234");
+            connection = DriverManager.getConnection("jdbc:mysql://hadoop102:3306/test?useSSL=false", "root", "1234");
             preparedStatement = connection.prepareStatement("INSERT INTO `sensor` VALUES(?,?,?) ON DUPLICATE KEY UPDATE `ts`=?,`vc`=?");
         }
 

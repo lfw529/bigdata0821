@@ -18,7 +18,7 @@ public class Sink_JDBC {
         env.setParallelism(1);
 
         //2.读取端口数据并转换为JavaBean
-        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop105", 8888)
+        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop102", 8888)
                 .map(new MapFunction<String, WaterSensor>() {
                     @Override
                     public WaterSensor map(String value) throws Exception {
@@ -47,7 +47,7 @@ public class Sink_JDBC {
                         withBatchSize(1).
                         build(),
                 new JdbcConnectionOptions.JdbcConnectionOptionsBuilder()
-                        .withUrl("jdbc:mysql://hadoop105:3306/test?useSSL=false")
+                        .withUrl("jdbc:mysql://hadoop102:3306/test?useSSL=false")
                         .withDriverName("com.mysql.jdbc.Driver")
                         .withUsername("root")
                         .withPassword("1234")

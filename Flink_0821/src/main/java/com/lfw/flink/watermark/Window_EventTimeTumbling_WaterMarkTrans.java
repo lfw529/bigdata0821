@@ -29,7 +29,7 @@ public class Window_EventTimeTumbling_WaterMarkTrans {
                     }
                 });
         //3.读取端口数据并转换成JavaBean
-        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop105", 7777).assignTimestampsAndWatermarks(waterSensorWatermarkStrategy)
+        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop102", 7777).assignTimestampsAndWatermarks(waterSensorWatermarkStrategy)
                 .map(data -> {
                     String[] split = data.split(",");
                     return new WaterSensor(split[0], Long.parseLong(split[1]), Integer.parseInt(split[2]));

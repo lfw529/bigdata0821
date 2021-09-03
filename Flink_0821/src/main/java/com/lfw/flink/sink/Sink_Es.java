@@ -21,7 +21,7 @@ public class Sink_Es {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
         //2.读取端口数据并转换为JavaBean
-        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop105", 8888)
+        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop102", 8888)
 //        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.readTextFile("input/sensor.txt")
                 .map(new MapFunction<String, WaterSensor>() {
                     @Override
@@ -35,7 +35,7 @@ public class Sink_Es {
 
         //3.将数据写入ES
         ArrayList<HttpHost> httpHosts = new ArrayList<>();
-        httpHosts.add(new HttpHost("hadoop105", 9200));
+        httpHosts.add(new HttpHost("hadoop102", 9200));
         ElasticsearchSink.Builder<WaterSensor> waterSensorBuilder =
                 new ElasticsearchSink.Builder<WaterSensor>(httpHosts, new MyEsSinkFunc());
         //批量提交参数

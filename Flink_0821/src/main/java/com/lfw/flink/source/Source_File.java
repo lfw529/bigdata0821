@@ -11,7 +11,7 @@ public class Source_File {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
         //2.从文件读取数据
-        DataStreamSource<String> stringDataStreamSource = env.readTextFile("D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\sensor.txt");
+        DataStreamSource<String> stringDataStreamSource = env.readTextFile("Flink_0821/src/main/resources/sensor.txt");
         //3.转换为JavaBean并打印数据
         stringDataStreamSource.map(new MapFunction<String, WaterSensor>() {
             @Override

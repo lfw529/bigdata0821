@@ -15,7 +15,7 @@ public class PageView_WordCount {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         //2.获取文本数据
-        DataStreamSource<String> readTextFile = env.readTextFile("D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\UserBehavior.csv");
+        DataStreamSource<String> readTextFile = env.readTextFile("Flink_0821/src/main/resources/UserBehavior.csv");
 
         //3.转换为JavaBean并过滤出PV的数据
         SingleOutputStreamOperator<Tuple2<String, Integer>> pv = readTextFile.flatMap(new FlatMapFunction<String, Tuple2<String, Integer>>() {

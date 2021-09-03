@@ -16,7 +16,7 @@ public class Process_OnEvent {
         env.setParallelism(1);
 
         SingleOutputStreamOperator<WaterSensor> stream = env
-                .socketTextStream("hadoop105", 7777)  // 在socket终端只输入毫秒级别的时间戳
+                .socketTextStream("hadoop102", 7777)  // 在socket终端只输入毫秒级别的时间戳
                 .map(value -> {
                     String[] datas = value.split(",");
                     return new WaterSensor(datas[0], Long.valueOf(datas[1]), Integer.valueOf(datas[2]));

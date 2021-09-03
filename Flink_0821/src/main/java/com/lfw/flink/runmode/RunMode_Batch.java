@@ -16,7 +16,7 @@ public class RunMode_Batch {
         //指定为批处理模式
         env.setRuntimeMode(RuntimeExecutionMode.BATCH);  //AUTOMATIC 会根据是否可以 BATCH 选择
         //2.读取文本数据
-        DataStreamSource<String> readTextFile = env.readTextFile("D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\input.txt");
+        DataStreamSource<String> readTextFile = env.readTextFile("Flink_0821/src/main/resources/input.txt");
         //3.压平并转换为元组
         SingleOutputStreamOperator<Tuple2<String, Integer>> wordToOne = readTextFile.flatMap(new FlatMapFunction<String, Tuple2<String, Integer>>() {
             @Override
