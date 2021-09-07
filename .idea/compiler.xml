@@ -25,7 +25,6 @@
         <module name="Hive0821" />
         <module name="Kafka0821" />
         <module name="Spark0821" />
-        <module name="MapReduce0821" />
         <module name="Flume0821" />
         <module name="Collect0821" />
         <module name="YarnTool" />
