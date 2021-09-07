@@ -6,7 +6,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class FlowMapper extends Mapper<LongWritable, Text,Text, FlowBean> {
+public class FlowMapper extends Mapper<LongWritable, Text, Text, FlowBean> {
 
     private Text outK = new Text();
     private FlowBean outV = new FlowBean();
@@ -21,11 +21,11 @@ public class FlowMapper extends Mapper<LongWritable, Text,Text, FlowBean> {
         //封装key
         outK.set(flows[1]);
         //封装value
-        outV.setUpFlow(Integer.parseInt(flows[flows.length-3]));
-        outV.setDownFlow(Integer.parseInt(flows[flows.length-2]));
+        outV.setUpFlow(Integer.parseInt(flows[flows.length - 3]));
+        outV.setDownFlow(Integer.parseInt(flows[flows.length - 2]));
         outV.setSumFlow();
 
         //写出
-        context.write(outK,outV);
+        context.write(outK, outV);
     }
 }

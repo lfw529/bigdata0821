@@ -31,11 +31,11 @@ public class WordCountDriver {
         job.setOutputValueClass(IntWritable.class);
 
         //6. 设置输入和输出路径(本地)
-        FileInputFormat.setInputPaths(job, new Path("src/main/resources/hello.txt"));
-        FileOutputFormat.setOutputPath(job, new Path("D:\\IdeaProjects\\bigdata0821\\MapReduce0821\\src\\main\\resources\\output1"));
+        FileInputFormat.setInputPaths(job, new Path("Hadoop_0821/MapReduce_0821/input/hello.txt"));
+        FileOutputFormat.setOutputPath(job, new Path("Hadoop_0821/MapReduce_0821/output/1"));
 
         // 7 提交
         boolean result = job.waitForCompletion(true);
-
+        System.exit(result ? 0 : 1);
     }
 }
