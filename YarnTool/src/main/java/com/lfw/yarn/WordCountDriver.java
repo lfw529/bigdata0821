@@ -3,6 +3,7 @@ package com.lfw.yarn;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
+
 import java.util.Arrays;
 
 public class WordCountDriver {
