@@ -23,6 +23,48 @@
       <module fileurl="file://$PROJECT_DIR$/YarnTool/YarnTool.iml" filepath="$PROJECT_DIR$/YarnTool/YarnTool.iml" />
       <module fileurl="file://$PROJECT_DIR$/ZooKeeper_0821/ZooKeeper_0821.iml" filepath="$PROJECT_DIR$/ZooKeeper_0821/ZooKeeper_0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/alerter/alerter.iml" filepath="$PROJECT_DIR$/alerter/alerter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/hive.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/hive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/accumulo-handler/hive-accumulo-handler.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/accumulo-handler/hive-accumulo-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/beeline/hive-beeline.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/beeline/hive-beeline.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/classification/hive-classification.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/classification/hive-classification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/cli/hive-cli.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/cli/hive-cli.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/common/hive-common.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/common/hive-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/contrib/hive-contrib.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/contrib/hive-contrib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/druid-handler/hive-druid-handler.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/druid-handler/hive-druid-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/ql/hive-exec.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/ql/hive-exec.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/hbase-handler/hive-hbase-handler.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/hbase-handler/hive-hbase-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/hcatalog/hive-hcatalog.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/hcatalog/hive-hcatalog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/hcatalog/core/hive-hcatalog-core.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/hcatalog/core/hive-hcatalog-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/hcatalog/hcatalog-pig-adapter/hive-hcatalog-pig-adapter.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/hcatalog/hcatalog-pig-adapter/hive-hcatalog-pig-adapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/hcatalog/server-extensions/hive-hcatalog-server-extensions.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/hcatalog/server-extensions/hive-hcatalog-server-extensions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/hcatalog/streaming/hive-hcatalog-streaming.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/hcatalog/streaming/hive-hcatalog-streaming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/hplsql/hive-hplsql.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/hplsql/hive-hplsql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/jdbc/hive-jdbc.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/jdbc/hive-jdbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/jdbc-handler/hive-jdbc-handler.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/jdbc-handler/hive-jdbc-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/kryo-registrator/hive-kryo-registrator.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/kryo-registrator/hive-kryo-registrator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/llap-client/hive-llap-client.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/llap-client/hive-llap-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/llap-common/hive-llap-common.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/llap-common/hive-llap-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/llap-ext-client/hive-llap-ext-client.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/llap-ext-client/hive-llap-ext-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/llap-server/hive-llap-server.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/llap-server/hive-llap-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/llap-tez/hive-llap-tez.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/llap-tez/hive-llap-tez.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/metastore/hive-metastore.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/metastore/hive-metastore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/packaging/hive-packaging.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/packaging/hive-packaging.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/serde/hive-serde.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/serde/hive-serde.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/service/hive-service.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/service/hive-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/service-rpc/hive-service-rpc.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/service-rpc/hive-service-rpc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/shims/aggregator/hive-shims.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/shims/aggregator/hive-shims.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/shims/0.23/hive-shims-0.23.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/shims/0.23/hive-shims-0.23.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/shims/hive-shims-aggregator.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/shims/hive-shims-aggregator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/shims/common/hive-shims-common.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/shims/common/hive-shims-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/shims/scheduler/hive-shims-scheduler.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/shims/scheduler/hive-shims-scheduler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/spark-client/hive-spark-client.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/spark-client/hive-spark-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/standalone-metastore/hive-standalone-metastore.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/standalone-metastore/hive-standalone-metastore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/streaming/hive-streaming.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/streaming/hive-streaming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/testutils/hive-testutils.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/testutils/hive-testutils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/upgrade-acid/hive-upgrade-acid.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/upgrade-acid/hive-upgrade-acid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/vector-code-gen/hive-vector-code-gen.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/vector-code-gen/hive-vector-code-gen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/hcatalog/webhcat/svr/hive-webhcat.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/hcatalog/webhcat/svr/hive-webhcat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/hcatalog/webhcat/java-client/hive-webhcat-java-client.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/hcatalog/webhcat/java-client/hive-webhcat-java-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/momo_chat_app/momo_chat_app.iml" filepath="$PROJECT_DIR$/momo_chat_app/momo_chat_app.iml" />
     </modules>
   </component>

@@ -7,26 +7,64 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Flink_0821" />
         <module name="MapReduce_0821" />
-        <module name="SparkSQLTest0821" />
-        <module name="Hivefunction0821" />
+        <module name="hive-upgrade-acid" />
+        <module name="hive-exec" />
+        <module name="hive-shims-0.23" />
+        <module name="HDFS_0821" />
+        <module name="hive-llap-server" />
+        <module name="hive-shims-scheduler" />
+        <module name="hive-serde" />
+        <module name="Hive0821" />
+        <module name="hive-service-rpc" />
+        <module name="hive-accumulo-handler" />
+        <module name="hive-llap-client" />
+        <module name="Collect0821" />
+        <module name="hive-classification" />
+        <module name="hive-llap-tez" />
+        <module name="hive-shims-common" />
+        <module name="hive-contrib" />
+        <module name="hive-hcatalog-streaming" />
+        <module name="hive-llap-ext-client" />
         <module name="SparkStreaming0821" />
         <module name="ZooKeeper_0821" />
+        <module name="hive-druid-handler" />
         <module name="Phoenix0821" />
-        <module name="momo_chat_app" />
-        <module name="Redis0821" />
-        <module name="HDFS_0821" />
+        <module name="hive-cli" />
+        <module name="hive-spark-client" />
         <module name="SparkCoreTest0821" />
+        <module name="hive-vector-code-gen" />
+        <module name="hive-webhcat-java-client" />
+        <module name="hive-kryo-registrator" />
+        <module name="hive-webhcat" />
+        <module name="hive-beeline" />
+        <module name="Flink_0821" />
+        <module name="SparkSQLTest0821" />
+        <module name="hive-hcatalog-server-extensions" />
+        <module name="hive-streaming" />
+        <module name="hive-common" />
+        <module name="momo_chat_app" />
         <module name="Azkaban0821" />
+        <module name="hive-hplsql" />
         <module name="Scala_0821" />
-        <module name="Hbase0821" />
-        <module name="Hive0821" />
         <module name="Kafka0821" />
-        <module name="Spark0821" />
-        <module name="Flume0821" />
-        <module name="Collect0821" />
+        <module name="hive-hcatalog-core" />
         <module name="YarnTool" />
+        <module name="hive-hcatalog-pig-adapter" />
+        <module name="hive-hbase-handler" />
+        <module name="hive-metastore" />
+        <module name="Hivefunction0821" />
+        <module name="hive-shims" />
+        <module name="Redis0821" />
+        <module name="hive-llap-common" />
+        <module name="hive-jdbc-handler" />
+        <module name="Hbase0821" />
+        <module name="hive-service" />
+        <module name="hive-jdbc" />
+        <module name="Spark0821" />
+        <module name="hive-standalone-metastore" />
+        <module name="Flume0821" />
+        <module name="hive-testutils" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -40,6 +78,48 @@
       <module name="Hbase0821" target="1.5" />
       <module name="HDFS_0821" target="1.5" />
       <module name="HFDS0821" target="1.8" />
+      <module name="hive" target="1.8" />
+      <module name="hive-accumulo-handler" target="1.8" />
+      <module name="hive-beeline" target="1.8" />
+      <module name="hive-classification" target="1.8" />
+      <module name="hive-cli" target="1.8" />
+      <module name="hive-common" target="1.8" />
+      <module name="hive-contrib" target="1.8" />
+      <module name="hive-druid-handler" target="1.8" />
+      <module name="hive-exec" target="1.8" />
+      <module name="hive-hbase-handler" target="1.8" />
+      <module name="hive-hcatalog" target="1.8" />
+      <module name="hive-hcatalog-core" target="1.8" />
+      <module name="hive-hcatalog-pig-adapter" target="1.8" />
+      <module name="hive-hcatalog-server-extensions" target="1.8" />
+      <module name="hive-hcatalog-streaming" target="1.8" />
+      <module name="hive-hplsql" target="1.8" />
+      <module name="hive-jdbc" target="1.8" />
+      <module name="hive-jdbc-handler" target="1.8" />
+      <module name="hive-kryo-registrator" target="1.8" />
+      <module name="hive-llap-client" target="1.8" />
+      <module name="hive-llap-common" target="1.8" />
+      <module name="hive-llap-ext-client" target="1.8" />
+      <module name="hive-llap-server" target="1.8" />
+      <module name="hive-llap-tez" target="1.8" />
+      <module name="hive-metastore" target="1.8" />
+      <module name="hive-packaging" target="1.8" />
+      <module name="hive-serde" target="1.8" />
+      <module name="hive-service" target="1.8" />
+      <module name="hive-service-rpc" target="1.8" />
+      <module name="hive-shims" target="1.8" />
+      <module name="hive-shims-0.23" target="1.8" />
+      <module name="hive-shims-aggregator" target="1.8" />
+      <module name="hive-shims-common" target="1.8" />
+      <module name="hive-shims-scheduler" target="1.8" />
+      <module name="hive-spark-client" target="1.8" />
+      <module name="hive-standalone-metastore" target="1.8" />
+      <module name="hive-streaming" target="1.8" />
+      <module name="hive-testutils" target="1.8" />
+      <module name="hive-upgrade-acid" target="1.8" />
+      <module name="hive-vector-code-gen" target="1.8" />
+      <module name="hive-webhcat" target="1.8" />
+      <module name="hive-webhcat-java-client" target="1.8" />
       <module name="Hive0821" target="1.5" />
       <module name="Hivefunction0821" target="1.5" />
       <module name="kafka0821" target="1.8" />
