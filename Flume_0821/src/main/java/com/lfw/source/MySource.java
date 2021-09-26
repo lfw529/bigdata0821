@@ -1,10 +1,12 @@
 package com.lfw.source;
+
 import org.apache.flume.Context;
 import org.apache.flume.EventDeliveryException;
 import org.apache.flume.PollableSource;
 import org.apache.flume.conf.Configurable;
 import org.apache.flume.event.SimpleEvent;
 import org.apache.flume.source.AbstractSource;
+
 import java.util.HashMap;
 
 public class MySource extends AbstractSource implements Configurable, PollableSource {
@@ -16,14 +18,14 @@ public class MySource extends AbstractSource implements Configurable, PollableSo
     @Override
     public void configure(Context context) {
         delay = context.getLong("delay");
-        field = context.getString("field","Hello!");
+        field = context.getString("field", "Hello!");
     }
 
     @Override
     public Status process() throws EventDeliveryException {
         try {
             //创建事件头信息
-            HashMap<String,String> headerMap = new HashMap<>();
+            HashMap<String, String> headerMap = new HashMap<>();
             //创建事件
             SimpleEvent event = new SimpleEvent();
             //循环封装事件

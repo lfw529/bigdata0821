@@ -1,7 +1,9 @@
 package com.lfw.interceptor;
+
 import org.apache.flume.Context;
 import org.apache.flume.Event;
 import org.apache.flume.interceptor.Interceptor;
+
 import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +11,7 @@ import java.util.List;
 public class TypeInterceptor implements Interceptor {
     //声明一个存放事件的集合
     private List<Event> addHeaderEvents;
+
     @Override
     public void initialize() {
         //初始化存放事件的集合
@@ -32,6 +35,7 @@ public class TypeInterceptor implements Interceptor {
         }
         return event;
     }
+
     //批量事件拦截(在批量中调用单个事件)
     @Override
     public List<Event> intercept(List<Event> events) {

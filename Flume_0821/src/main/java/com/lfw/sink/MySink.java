@@ -1,4 +1,5 @@
 package com.lfw.sink;
+
 import org.apache.flume.*;
 import org.apache.flume.conf.Configurable;
 import org.apache.flume.sink.AbstractSink;
@@ -24,23 +25,23 @@ public class MySink extends AbstractSink implements Configurable {
         //开启事务
         txn.begin();
         //读取Channel中的事件，直到读取到事件结束循环
-        while (true){
+        while (true) {
             event = ch.take();
-            if (event != null){
+            if (event != null) {
                 break;
             }
         }
-        try{
+        try {
             //处理事件（打印）
             LOG.info(prefix + new String(event.getBody()) + suffix);
             //事务提交
             txn.commit();
             status = Status.READY;
-        }catch (Exception e){
+        } catch (Exception e) {
             //遇到异常，事务回滚
             txn.rollback();
             status = Status.BACKOFF;
-        }finally {
+        } finally {
             //关闭事务
             txn.close();
         }
@@ -50,7 +51,7 @@ public class MySink extends AbstractSink implements Configurable {
     @Override
     public void configure(Context context) {
         //读取配置文件内容，有默认值
-        prefix = context.getString("prefix","hello:");
+        prefix = context.getString("prefix", "hello:");
 
         //读取配置文件内容，无默认值
         suffix = context.getString("suffix");

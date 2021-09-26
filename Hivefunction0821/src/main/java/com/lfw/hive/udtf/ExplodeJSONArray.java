@@ -12,6 +12,7 @@ import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectIn
 import org.json.JSONArray;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ExplodeJSONArray extends GenericUDTF {
     @Override
@@ -21,14 +22,14 @@ public class ExplodeJSONArray extends GenericUDTF {
             throw new UDFArgumentLengthException("explode_json_array 函数的参数个数只能为1.....");
         }
 
-        //2 约束函数传入参数的类型
+        //2 约束函数传入参数的类型,第一个必须为 String
         String typeName = argOIs.getAllStructFieldRefs().get(0).getFieldObjectInspector().getTypeName();
-        if (!"string".equals(typeName)) {
+        if (!"string".equals(typeName)) {  //判断参数是否为基础数据类型
             throw new UDFArgumentTypeException(0, "explode_json_array 函数的第一个参数的类型只能为 String...");
         }
         //3 约束函数返回值的类型
-        ArrayList<String> fieldNames = new ArrayList<String>();
-        ArrayList<ObjectInspector> fieldOIs = new ArrayList<ObjectInspector>();
+        List<String> fieldNames = new ArrayList<String>();
+        List<ObjectInspector> fieldOIs = new ArrayList<ObjectInspector>();
 
         fieldNames.add("item");
         fieldOIs.add(PrimitiveObjectInspectorFactory.javaStringObjectInspector);

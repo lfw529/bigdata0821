@@ -46,6 +46,7 @@
         <module name="momo_chat_app" />
         <module name="Azkaban0821" />
         <module name="hive-hplsql" />
+        <module name="Flume_0821" />
         <module name="Scala_0821" />
         <module name="Kafka0821" />
         <module name="hive-hcatalog-core" />
@@ -63,7 +64,6 @@
         <module name="hive-jdbc" />
         <module name="Spark0821" />
         <module name="hive-standalone-metastore" />
-        <module name="Flume0821" />
         <module name="hive-testutils" />
       </profile>
     </annotationProcessing>
@@ -73,10 +73,11 @@
       <module name="Flink0821" target="1.8" />
       <module name="Flink_0821" target="8" />
       <module name="Flume0821" target="1.5" />
-      <module name="Hadoop_0821" target="1.5" />
+      <module name="Flume_0821" target="1.8" />
+      <module name="Hadoop_0821" target="1.8" />
       <module name="hbase" target="1.8" />
       <module name="Hbase0821" target="1.5" />
-      <module name="HDFS_0821" target="1.5" />
+      <module name="HDFS_0821" target="1.8" />
       <module name="HFDS0821" target="1.8" />
       <module name="hive" target="1.8" />
       <module name="hive-accumulo-handler" target="1.8" />
@@ -125,7 +126,7 @@
       <module name="kafka0821" target="1.8" />
       <module name="Kafka0821" target="1.5" />
       <module name="MapReduce0821" target="1.8" />
-      <module name="MapReduce_0821" target="1.5" />
+      <module name="MapReduce_0821" target="1.8" />
       <module name="momo_chat_app" target="1.5" />
       <module name="Phoenix0821" target="1.5" />
       <module name="Redis0821" target="1.5" />

@@ -4,7 +4,6 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/Hive0821/pom.xml" />
-        <option value="$PROJECT_DIR$/Flume0821/pom.xml" />
         <option value="$PROJECT_DIR$/Kafka0821/pom.xml" />
         <option value="$PROJECT_DIR$/Collect0821/pom.xml" />
         <option value="$PROJECT_DIR$/Hbase0821/pom.xml" />
@@ -24,6 +23,7 @@
         <option value="$PROJECT_DIR$/Hadoop_0821/pom.xml" />
         <option value="$PROJECT_DIR$/ZooKeeper_0821/pom.xml" />
         <option value="$PROJECT_DIR$/apache-hive-3.1.2-src/pom.xml" />
+        <option value="$PROJECT_DIR$/Flume_0821/pom.xml" />
       </list>
     </option>
   </component>

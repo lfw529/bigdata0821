@@ -50,7 +50,7 @@ public class MyUDTF2 extends GenericUDTF {
         for(String field : fields){
             //清空集合
             outList.clear();
-            //将field按照“，”分割
+            //将field按照","分割
             String[] words = field.split(",");
 
             //将数据放入集合
