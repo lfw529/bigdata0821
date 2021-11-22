@@ -1,4 +1,5 @@
 package com.lfw.serializable
+
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -24,7 +25,7 @@ object serializable01_object {
     //序列化方式
     //1 手动继承 extends Serializable
     //2 使用样例类  样例类自动实现了序列化
-    rdd.foreach(user => println(user.name))  //由于多线程问题，所以打印结果是无序的
+    rdd.foreach(user => println(user.name)) //由于多线程问题，所以打印结果是无序的
 
     //因为rdd2里面没有数据,所以foreach算子里面的代码没有执行,那就说明我在executor端没有用到了driver端的user对象,所以不报错
     rdd.foreach(user => println(user.name))
@@ -45,6 +46,6 @@ object serializable01_object {
  *
  */
 case class User() extends Serializable {
-  var name:String =_
+  var name: String = _
 }
 

@@ -9,7 +9,6 @@
         <option value="$PROJECT_DIR$/Hbase0821/pom.xml" />
         <option value="$PROJECT_DIR$/Phoenix0821/pom.xml" />
         <option value="$PROJECT_DIR$/Redis0821/pom.xml" />
-        <option value="$PROJECT_DIR$/Spark0821/pom.xml" />
         <option value="$PROJECT_DIR$/SparkCoreTest0821/pom.xml" />
         <option value="$PROJECT_DIR$/SparkSQLTest0821/pom.xml" />
         <option value="$PROJECT_DIR$/Hivefunction0821/pom.xml" />
@@ -24,6 +23,8 @@
         <option value="$PROJECT_DIR$/ZooKeeper_0821/pom.xml" />
         <option value="$PROJECT_DIR$/apache-hive-3.1.2-src/pom.xml" />
         <option value="$PROJECT_DIR$/Flume_0821/pom.xml" />
+        <option value="$PROJECT_DIR$/Spark_0821_WordCount/pom.xml" />
+        <option value="$PROJECT_DIR$/SparkCoreTest_0821/pom.xml" />
       </list>
     </option>
   </component>

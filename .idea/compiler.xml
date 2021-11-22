@@ -48,6 +48,7 @@
         <module name="hive-hplsql" />
         <module name="Flume_0821" />
         <module name="Scala_0821" />
+        <module name="SparkCoreTest_0821" />
         <module name="Kafka0821" />
         <module name="hive-hcatalog-core" />
         <module name="YarnTool" />
@@ -59,10 +60,10 @@
         <module name="Redis0821" />
         <module name="hive-llap-common" />
         <module name="hive-jdbc-handler" />
+        <module name="Spark_0821_WordCount" />
         <module name="Hbase0821" />
         <module name="hive-service" />
         <module name="hive-jdbc" />
-        <module name="Spark0821" />
         <module name="hive-standalone-metastore" />
         <module name="hive-testutils" />
       </profile>
@@ -121,7 +122,7 @@
       <module name="hive-vector-code-gen" target="1.8" />
       <module name="hive-webhcat" target="1.8" />
       <module name="hive-webhcat-java-client" target="1.8" />
-      <module name="Hive0821" target="1.5" />
+      <module name="Hive0821" target="8" />
       <module name="Hivefunction0821" target="1.5" />
       <module name="kafka0821" target="1.8" />
       <module name="Kafka0821" target="1.5" />
@@ -133,7 +134,9 @@
       <module name="Scala0821" target="1.8" />
       <module name="Scala_0821" target="1.5" />
       <module name="Spark0821" target="1.5" />
+      <module name="Spark_0821_WordCount" target="8" />
       <module name="SparkCoreTest0821" target="1.5" />
+      <module name="SparkCoreTest_0821" target="8" />
       <module name="SparkSQLTest0821" target="1.5" />
       <module name="SparkStreaming0821" target="1.5" />
       <module name="untitled1" target="1.8" />
