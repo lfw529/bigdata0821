@@ -10,8 +10,8 @@ object cache01 {
     //2.创建SparkContext，该对象是提交Spark App的入口
     val sc: SparkContext = new SparkContext(conf)
 
-    //3.创建一个 RDD,读取指定位置文件：hello atguigu atguigu
-    val lineRdd = sc.textFile("D:\\IdeaProjects\\bigdata0821\\SparkCoreTest0821\\input\\3.txt")
+    //3.创建一个 RDD,读取指定位置文件：hello lifuwen lifuwen
+    val lineRdd = sc.textFile("SparkCoreTest_0821/input/3.txt")
 
     //3.1业务逻辑
     val wordRdd: RDD[String] = lineRdd.flatMap(line => line.split(" "))
