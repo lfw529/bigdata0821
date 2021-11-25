@@ -7,7 +7,7 @@ object checkpoint03 {
   def main(args: Array[String]): Unit = {
 
     // 设置访问HDFS集群的用户名
-    System.setProperty("HADOOP_USER_NAME","atguigu")  //也可以通过 edit Configuration 动态设置参数
+    System.setProperty("HADOOP_USER_NAME", "lfw") //也可以通过 edit Configuration 动态设置参数
 
     //1.创建SparkConf并设置App名称
     val conf: SparkConf = new SparkConf().setAppName("SparkCoreTest").setMaster("local[*]")
@@ -18,8 +18,8 @@ object checkpoint03 {
     // 需要设置路径.需要提前在HDFS集群上创建/checkpoint路径
     sc.setCheckpointDir("hdfs://hadoop102:8020/checkpoint")
 
-    //3. 创建一个RDD，读取指定位置文件:hello atguigu atguigu
-    val lineRdd: RDD[String] = sc.textFile("D:\\IdeaProjects\\bigdata0821\\SparkCoreTest0821\\input\\3.txt")
+    //3. 创建一个RDD，读取指定位置文件:hello lifuwen lifuwen
+    val lineRdd: RDD[String] = sc.textFile("SparkCoreTest_0821/input/3.txt")
 
     //3.1.业务逻辑
     val wordRdd: RDD[String] = lineRdd.flatMap(line => line.split(" "))

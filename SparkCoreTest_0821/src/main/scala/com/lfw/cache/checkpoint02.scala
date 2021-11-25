@@ -4,7 +4,6 @@ import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
 object checkpoint02 {
-
   def main(args: Array[String]): Unit = {
 
     //1.创建SparkConf并设置App名称
@@ -15,10 +14,10 @@ object checkpoint02 {
 
     //启动检查点功能前先设置一下检查点的存储目录
     //需要设置路径，否则抛异常：Checkpoint directory has not been set in the SparkContext
-    sc.setCheckpointDir("D:\\IdeaProjects\\bigdata0821\\SparkCoreTest0821\\checkpoint")
+    sc.setCheckpointDir("DSparkCoreTest_0821/checkpoint")
 
-    //3. 创建一个RDD，读取指定位置文件:hello atguigu atguigu
-    val lineRdd: RDD[String] = sc.textFile("D:\\IdeaProjects\\bigdata0821\\SparkCoreTest0821\\input\\3.txt")
+    //3. 创建一个RDD，读取指定位置文件:hello lifuwen lifuwen
+    val lineRdd: RDD[String] = sc.textFile("SparkCoreTest_0821/input/3.txt")
 
     //3.1.业务逻辑
     val wordRdd: RDD[String] = lineRdd.flatMap(line => line.split(" "))
@@ -38,24 +37,27 @@ object checkpoint02 {
     //3.2 触发执行逻辑
     wordToOneRdd.collect().foreach(println)
     /*
-      (hello,1607342837127)
-      (atguigu,1607342837127)
-      (atguigu,1607342837127)
+      (hello,1637812941098)
+      (lifuwen,1637812941098)
+      (lifuwen,1637812941098)
      */
     // 会立即启动一个新的job来专门的做checkpoint运算
+    println("-----------------------------")
 
     //3.3 再次触发执行逻辑
     wordToOneRdd.collect().foreach(println)
     /*
-      (hello,1607342837127)
-      (atguigu,1607342837127)
-      (atguigu,1607342837127)
-     */
+     (hello,1637812941098)
+     (lifuwen,1637812941098)
+     (lifuwen,1637812941098)
+    */
+    println("-----------------------------")
+
     wordToOneRdd.collect().foreach(println)
     /*
-      (hello,1607342837127)
-      (atguigu,1607342837127)
-      (atguigu,1607342837127)
+     (hello,1637812941098)
+     (lifuwen,1637812941098)
+     (lifuwen,1637812941098)
     */
     Thread.sleep(10000000)
 
