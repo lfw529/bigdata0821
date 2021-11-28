@@ -12,7 +12,7 @@ object Lineage03 {
     val sc = new SparkContext(conf)
 
     //textFile,flatMap,map算子全部是窄依赖,不会增加stage阶段
-    val lineRDD: RDD[String] = sc.textFile("D:\\IdeaProjects\\bigdata0821\\SparkCoreTest0821\\input\\1.txt")
+    val lineRDD: RDD[String] = sc.textFile("SparkCoreTest_0821/input/1.txt")
     val flatMapRDD: RDD[String] = lineRDD.flatMap(_.split(" "))
     val mapRDD: RDD[(String, Int)] = flatMapRDD.map((_, 1))
 
@@ -23,7 +23,7 @@ object Lineage03 {
     //job0打印到控制台
     resultRDD.collect().foreach(println)
     //job1输出到磁盘
-    resultRDD.saveAsTextFile("D:\\IdeaProjects\\bigdata0821\\SparkCoreTest0821\\output5")
+    resultRDD.saveAsTextFile("SparkCoreTest_0821/output5")
 
     //阻塞线程,方便进入localhost:4040查看
     Thread.sleep(Long.MaxValue)
