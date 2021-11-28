@@ -10,11 +10,11 @@ object Operate_Object {
     //2.创建SparkContext，该对象是提交Spark App的入口
     val sc: SparkContext = new SparkContext(conf)
     //3.1 创建RDD
-    val dataRDD: RDD[Int] = sc.makeRDD(Array(1,2,3,4),2)
+    val dataRDD: RDD[Int] = sc.makeRDD(Array(1, 2, 3, 4), 2)
     //3.2 保存数据
-    dataRDD.saveAsObjectFile("D:\\IdeaProjects\\bigdata0821\\SparkCoreTest0821\\objFile")
+    dataRDD.saveAsObjectFile("SparkCoreTest_0821/objFile")
     //3.3 读取数据
-    sc.objectFile[Int]("D:\\IdeaProjects\\bigdata0821\\SparkCoreTest0821\\objFile").collect().foreach(println)
+    sc.objectFile[Int]("SparkCoreTest_0821/objFile").collect().foreach(println)
     //4.关闭连接
     sc.stop()
   }
