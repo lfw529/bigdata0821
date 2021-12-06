@@ -25,6 +25,7 @@
         <option value="$PROJECT_DIR$/Flume_0821/pom.xml" />
         <option value="$PROJECT_DIR$/Spark_0821_WordCount/pom.xml" />
         <option value="$PROJECT_DIR$/SparkCoreTest_0821/pom.xml" />
+        <option value="$PROJECT_DIR$/SparkSQLTest_0821/pom.xml" />
       </list>
     </option>
   </component>

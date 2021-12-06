@@ -3,6 +3,6 @@
   <component name="ScalaCompilerConfiguration">
     <option name="postfixOps" value="true" />
     <option name="implicitConversions" value="true" />
-    <profile name="Maven 1" modules="Spark0821,SparkCoreTest0821,SparkCoreTest_0821,SparkSQLTest0821,Spark_0821_WordCount" />
+    <profile name="Maven 1" modules="Spark0821,SparkCoreTest0821,SparkCoreTest_0821,SparkSQLTest0821,SparkSQLTest_0821,Spark_0821_WordCount" />
   </component>
 </project>

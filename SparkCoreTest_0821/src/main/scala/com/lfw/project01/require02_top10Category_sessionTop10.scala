@@ -13,7 +13,7 @@ object require02_top10Category_sessionTop10 {
     //2.创建SparkContext，该对象是提交Spark App的入口
     val sc: SparkContext = new SparkContext(conf)
     //读取原始日志数据
-    val lineRDD: RDD[String] = sc.textFile("D:\\IdeaProjects\\bigdata0821\\SparkCoreTest0821\\input\\user_visit_action.txt")
+    val lineRDD: RDD[String] = sc.textFile("SparkCoreTest_0821/input/user_visit_action.txt")
 
     //变换数据结构 将lineRDD => actionRDD
     val actionRDD: RDD[UserVisitAction] = lineRDD.map(
