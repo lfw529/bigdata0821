@@ -8,7 +8,7 @@ object SparkSQL10_MySQL_Read {
     //1.创建上下文环境配置对象
     val conf: SparkConf = new SparkConf().setMaster("local[*]").setAppName("SparkSQLTest")
     //2.创建 SparkSession 对象
-    val spark: SparkSession = SparkSession.builder().config(conf).getOrCreate()
+    val spark:SparkSession = SparkSession.builder().config(conf).getOrCreate()
 
     //3.1 通过的 load 方法读取
     val df: DataFrame = spark.read.format("jdbc")
@@ -22,7 +22,7 @@ object SparkSQL10_MySQL_Read {
     //3.2 创建视图(临时)
     df.createOrReplaceTempView("user")
     //3.3 查询想要的数据
-    spark.sql("select id,nick_name from user where id >100 and id <= 110").show()
+    spark.sql("select id, nick_name from user where id >100 and id <= 110").show()
 
     //释放资源
     spark.stop()
