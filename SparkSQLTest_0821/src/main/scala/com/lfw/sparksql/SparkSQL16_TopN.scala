@@ -7,7 +7,7 @@ import org.apache.spark.sql.{Encoder, Encoders, SparkSession, functions}
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 
-object SparkSQL13_TopN {
+object SparkSQL16_TopN {
   def main(args: Array[String]): Unit = {
     //TODO 1 创建SparkConf配置文件,并设置App名称
     val conf = new SparkConf().setAppName("SparkSQLTest").setMaster("local[*]")
@@ -15,7 +15,7 @@ object SparkSQL13_TopN {
     val spark: SparkSession = SparkSession.builder().enableHiveSupport().config(conf).getOrCreate()
 
     //1 使用自定义udaf之前 先注册
-    spark.udf.register("city_remark",functions.udaf(new CityRemarkUDAF))
+    spark.udf.register("city_remark", functions.udaf(new CityRemarkUDAF))
 
     spark.sql(
       """
@@ -57,7 +57,7 @@ object SparkSQL13_TopN {
         |    )t2
         |)t3
         |where t3.rk <= 3
-        |""".stripMargin).show(1000,false)
+        |""".stripMargin).show(1000, false)
 
 
     //TODO 3 关闭资源
@@ -74,16 +74,16 @@ object SparkSQL13_TopN {
  *
  */
 
-case class Buffer(var totalCnt :Long,var cityMap:mutable.Map[String,Long])
+case class Buffer(var totalCnt: Long, var cityMap: mutable.Map[String, Long])
 
-class CityRemarkUDAF extends Aggregator[String,Buffer,String]{
+class CityRemarkUDAF extends Aggregator[String, Buffer, String] {
   //buffer的初始化
-  override def zero: Buffer = Buffer(0L,mutable.Map[String,Long]())
+  override def zero: Buffer = Buffer(0L, mutable.Map[String, Long]())
 
   //单个分区内的聚合方法 buffer city_name
   override def reduce(buffer: Buffer, city: String): Buffer = {
     buffer.totalCnt += 1
-    buffer.cityMap(city) = buffer.cityMap.getOrElse(city,0L) + 1
+    buffer.cityMap(city) = buffer.cityMap.getOrElse(city, 0L) + 1
     buffer
   }
 
@@ -92,9 +92,9 @@ class CityRemarkUDAF extends Aggregator[String,Buffer,String]{
     //将b2的地区次数 加给b1
     b1.totalCnt += b2.totalCnt
     //遍历b2的城市Map,将b2的城市的点击次数 一个个的加给b1
-    b2.cityMap.foreach{
-      case (city,cityCnt) => {
-        b1.cityMap(city) = b1.cityMap.getOrElse(city,0L) + cityCnt
+    b2.cityMap.foreach {
+      case (city, cityCnt) => {
+        b1.cityMap(city) = b1.cityMap.getOrElse(city, 0L) + cityCnt
       }
     }
     //返回b1
@@ -114,16 +114,16 @@ class CityRemarkUDAF extends Aggregator[String,Buffer,String]{
     //2 取出list的前两名,求出前两名的百分比,放到一个listbuffer里面,准备放回
     var sum = 0L
 
-    cityOrderList.take(2).foreach{
-      case (city,cityCnt) => {
-        val res : Long = cityCnt * 100 / buffer.totalCnt
+    cityOrderList.take(2).foreach {
+      case (city, cityCnt) => {
+        val res: Long = cityCnt * 100 / buffer.totalCnt
         cityRemarkList.append(city + " " + res + "%")
         sum += res
       }
     }
 
     //3 求出第三个其他城市的占比
-    if(cityOrderList.size > 2){
+    if (cityOrderList.size > 2) {
       cityRemarkList.append("其他 " + (100 - sum) + "%")
     }
 

@@ -4,7 +4,7 @@ import org.apache.spark.SparkConf
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql._
 
-object SparkSQL11_MySQL_Write {
+object SparkSQL14_MySQL_Write {
   def main(args: Array[String]): Unit = {
     //1.创建上下文环境配置对象
     val conf: SparkConf = new SparkConf().setMaster("local[*]").setAppName("SparkSQLTest")
@@ -29,16 +29,18 @@ object SparkSQL11_MySQL_Write {
      * 8.如果mysql表有主键的话,还需要考虑数据主键不能重复的问题,如果数据主键重复了,也会报错
      */
     ds.write.format("jdbc")
-      .option("url","jdbc:mysql://hadoop102:3306/gmall")
-      .option("driver","com.mysql.jdbc.Driver")
-      .option("user","root")
-      .option("password","123456")
-      .option("dbtable","user_info")
+      .option("url", "jdbc:mysql://hadoop102:3306/gmall")
+      .option("driver", "com.mysql.jdbc.Driver")
+      .option("user", "root")
+      .option("password", "1234")
+      .option("dbtable", "user_info")
       .mode(SaveMode.Append)
       .save()
 
     //释放资源
     spark.stop()
   }
+
   case class User(id: Int, name: String)
+
 }
