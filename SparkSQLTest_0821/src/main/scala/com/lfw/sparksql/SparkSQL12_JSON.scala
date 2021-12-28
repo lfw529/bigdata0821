@@ -1,7 +1,7 @@
 package com.lfw.sparksql
 
 import org.apache.spark.SparkConf
-import org.apache.spark.sql.{DataFrame, SparkSession}
+import org.apache.spark.sql.{DataFrame, Dataset, SparkSession}
 
 object SparkSQL12_JSON {
   def main(args: Array[String]): Unit = {
@@ -44,6 +44,16 @@ object SparkSQL12_JSON {
     //|Tydy|
     //|Qxdy|
     //+----+
-    //或者，可以为由 DataSet
+    //或者，可以为由 DataSet[String]表示的JSON数据集创建一个 DataFrame,每个字符串存储一个 JSON 对象
+    val otherPeopleDataset: Dataset[String] = spark.createDataset(
+      """{"name":"Yin","address":{"Columbus","state":"Ohio"}}""" :: Nil
+    )
+    val otherPeople: DataFrame = spark.read.json(otherPeopleDataset)
+    otherPeople.show();
+    //+--------------------+
+    //|     _corrupt_record|
+    //+--------------------+
+    //|{"name":"Yin","ad...|
+    //+--------------------+
   }
 }

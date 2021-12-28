@@ -22,7 +22,7 @@ object SparkSQL11_Merging {
     val cubesDF: DataFrame = spark.sparkContext.makeRDD(6 to 10).map(i => (i, i * i * i)).toDF("value", "cube");
     cubesDF.write.parquet("SparkSQLTest_0821/data/test_table/key=2")
     //读取完整的分区表，自动实现了两个分区（key=1/2）的合并
-    val mergedDF: DataFrame = spark.read.option("mergeSchema", true).parquet("SparkSQLTest_0821/data/test_table")
+    val mergedDF: DataFrame = spark.read.option("mergeSchema", value = true).parquet("SparkSQLTest_0821/data/test_table")
     mergedDF.printSchema()
     //最终的 Schema 不仅包含两个 Parquet 分区文件出现的所有三列
     //还包含了作为分区目录的额外分区列 key
