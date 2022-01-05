@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/Hadoop_0821/HDFS_0821/HDFS_0821.iml" filepath="$PROJECT_DIR$/Hadoop_0821/HDFS_0821/HDFS_0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hadoop_0821/Hadoop_0821.iml" filepath="$PROJECT_DIR$/Hadoop_0821/Hadoop_0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hbase0821/Hbase0821.iml" filepath="$PROJECT_DIR$/Hbase0821/Hbase0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/Hive.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/Hive.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hive0821/Hive0821.iml" filepath="$PROJECT_DIR$/Hive0821/Hive0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hivefunction0821/Hivefunction0821.iml" filepath="$PROJECT_DIR$/Hivefunction0821/Hivefunction0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/Kafka0821/Kafka0821.iml" filepath="$PROJECT_DIR$/Kafka0821/Kafka0821.iml" />
@@ -25,7 +26,7 @@
       <module fileurl="file://$PROJECT_DIR$/YarnTool/YarnTool.iml" filepath="$PROJECT_DIR$/YarnTool/YarnTool.iml" />
       <module fileurl="file://$PROJECT_DIR$/ZooKeeper_0821/ZooKeeper_0821.iml" filepath="$PROJECT_DIR$/ZooKeeper_0821/ZooKeeper_0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/alerter/alerter.iml" filepath="$PROJECT_DIR$/alerter/alerter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/hive.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/hive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gmall-canal/gmall-canal.iml" filepath="$PROJECT_DIR$/gmall-canal/gmall-canal.iml" />
       <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/accumulo-handler/hive-accumulo-handler.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/accumulo-handler/hive-accumulo-handler.iml" />
       <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/beeline/hive-beeline.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/beeline/hive-beeline.iml" />
       <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/classification/hive-classification.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/classification/hive-classification.iml" />

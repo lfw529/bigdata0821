@@ -21,12 +21,18 @@
         <option value="$PROJECT_DIR$/momo_chat_app/pom.xml" />
         <option value="$PROJECT_DIR$/Hadoop_0821/pom.xml" />
         <option value="$PROJECT_DIR$/ZooKeeper_0821/pom.xml" />
-        <option value="$PROJECT_DIR$/apache-hive-3.1.2-src/pom.xml" />
         <option value="$PROJECT_DIR$/Flume_0821/pom.xml" />
         <option value="$PROJECT_DIR$/Spark_0821_WordCount/pom.xml" />
         <option value="$PROJECT_DIR$/SparkCoreTest_0821/pom.xml" />
         <option value="$PROJECT_DIR$/SparkSQLTest_0821/pom.xml" />
+        <option value="$PROJECT_DIR$/gmall-canal/pom.xml" />
+        <option value="$PROJECT_DIR$/apache-hive-3.1.2-src/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/apache-hive-3.1.2-src/ql/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
