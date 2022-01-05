@@ -18,7 +18,7 @@ public class WordCount_Batch2 {
 
         MapOperator<String, Tuple2<String, Integer>> wordToOneDS = wordDS.map((MapFunction<String, Tuple2<String, Integer>>) value -> {
             return new Tuple2<>(value, 1);
-            ////return Tuple2.of(value,1);
+            //return Tuple2.of(value,1);
         }).returns(Types.TUPLE(Types.STRING, Types.INT));
 
         UnsortedGrouping<Tuple2<String, Integer>> groupBy = wordToOneDS.groupBy(0);
