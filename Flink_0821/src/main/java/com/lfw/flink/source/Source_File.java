@@ -17,7 +17,7 @@ public class Source_File {
             @Override
             public WaterSensor map(String value) throws Exception {
                 String[] split = value.split(",");
-                return new WaterSensor(split[0],Long.parseLong(split[1]),Integer.parseInt(split[2]));
+                return new WaterSensor(split[0], Long.parseLong(split[1]), Integer.parseInt(split[2]));
             }
         }).print();
         env.execute();

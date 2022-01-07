@@ -3,6 +3,7 @@ package com.lfw.flink.source;
 import com.lfw.flink.bean.WaterSensor;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+
 import java.util.Arrays;
 import java.util.List;
 
