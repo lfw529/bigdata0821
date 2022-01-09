@@ -1,30 +1,32 @@
 package com.lfw.flink.transform;
 
-import org.apache.flink.api.common.functions.RichFilterFunction;
+import org.apache.flink.api.common.functions.RichFlatMapFunction;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import org.apache.flink.util.Collector;
 
-public class Transform_RichFilter {
+public class Transform_RichFlatMapFunction {
     public static void main(String[] args) throws Exception {
         //1.获取执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(2);
 
-        env.fromElements(10, 3, 5, 9, 20, 8)
-                .filter(new MyRichFilter()).setParallelism(1)
+        env.fromElements(1, 2, 3, 4, 5)
+                .flatMap(new MyRichFlatMapFunction()).setParallelism(1)
                 .print();
         env.execute();
     }
 
-    public static class MyRichFilter extends RichFilterFunction<Integer> {
+    public static class MyRichFlatMapFunction extends RichFlatMapFunction<Integer, Integer> {
         @Override
         public void open(Configuration parameters) throws Exception {
             System.out.println("aaa");
         }
 
         @Override
-        public boolean filter(Integer value) throws Exception {
-            return value % 2 == 0;
+        public void flatMap(Integer value, Collector<Integer> out) throws Exception {
+            out.collect(value * value);
+            out.collect(value * value * value);
         }
 
         @Override
