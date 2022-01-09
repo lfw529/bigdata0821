@@ -8,42 +8,44 @@ import org.apache.flink.streaming.api.datastream.KeyedStream;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
+import java.util.ArrayList;
+
 public class Transform_Reduce {
     public static void main(String[] args) throws Exception {
-        //1.获取执行环境
-        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.setParallelism(1);
+        StreamExecutionEnvironment env1 = StreamExecutionEnvironment.getExecutionEnvironment();
+        ArrayList<WaterSensor> waterSensors = new ArrayList<>();
 
-        //2.读取端口数据并转换为JavaBean
-        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop105", 9999)
-                .map(new MapFunction<String, WaterSensor>() {
-                    @Override
-                    public WaterSensor map(String value) throws Exception {
-                        String[] split = value.split(",");
-                        return new WaterSensor(split[0], Long.parseLong(split[1]), Integer.parseInt(split[2]));
-                    }
-                });
+        waterSensors.add(new WaterSensor("sensor_1", 1607527992000L, 20));
+        waterSensors.add(new WaterSensor("sensor_1", 1607527994000L, 50));
+        waterSensors.add(new WaterSensor("sensor_1", 1607527996000L, 50));
+        waterSensors.add(new WaterSensor("sensor_2", 1607527993000L, 10));
+        waterSensors.add(new WaterSensor("sensor_2", 1607527995000L, 30));
 
-        //3.按照传感器ID分组
-        KeyedStream<WaterSensor, String> keyedStream = waterSensorDS.keyBy(new KeySelector<WaterSensor, String>() {
-            @Override
-            public String getKey(WaterSensor value) throws Exception {
-                return value.getId();
-            }
-        });
+        KeyedStream<WaterSensor, String> kbStream = env1
+                .fromCollection(waterSensors)
+                .keyBy(WaterSensor::getId);
 
-        //4.计算最高水位线
-        SingleOutputStreamOperator<WaterSensor> result = keyedStream.reduce(new ReduceFunction<WaterSensor>() {
+        kbStream.reduce(new ReduceFunction<WaterSensor>() {
             @Override
             public WaterSensor reduce(WaterSensor value1, WaterSensor value2) throws Exception {
-                return new WaterSensor(value1.getId(),
-                        value2.getTs(),
-                        Math.max(value1.getVc(), value2.getVc()));
+                System.out.println("reducer function ...");
+                return new WaterSensor(value1.getId(), value1.getTs(), value1.getVc() + value2.getVc());
             }
-        });
-        //5.打印
-        result.print();
-        //6.执行任务
-        env.execute();
+        }).print("reduce...");
+        env1.execute();
+
+        System.out.println("-------------------Lambda 表达式-----------------------");
+
+        StreamExecutionEnvironment env2 = StreamExecutionEnvironment.getExecutionEnvironment();
+
+        KeyedStream<WaterSensor, String> kbStream2 = env2
+                .fromCollection(waterSensors)
+                .keyBy(WaterSensor::getId);
+
+        kbStream2.reduce(((value1, value2) -> {
+            System.out.println("reducer function ...");
+            return new WaterSensor(value1.getId(), value1.getTs(), value1.getVc() + value2.getVc());
+        })).print("reduce...");
+        env2.execute();
     }
 }
