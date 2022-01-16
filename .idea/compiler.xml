@@ -33,7 +33,6 @@
         <module name="hive-cli" />
         <module name="hive-spark-client" />
         <module name="SparkCoreTest0821" />
-        <module name="FlinkCDC_2.0" />
         <module name="hive-vector-code-gen" />
         <module name="hive-webhcat-java-client" />
         <module name="hive-kryo-registrator" />
@@ -53,6 +52,7 @@
         <module name="SparkCoreTest_0821" />
         <module name="Kafka0821" />
         <module name="hive-hcatalog-core" />
+        <module name="FlinkCDC" />
         <module name="YarnTool" />
         <module name="hive-hcatalog-pig-adapter" />
         <module name="hive-hbase-handler" />
@@ -76,6 +76,7 @@
       <module name="Collect0821" target="1.8" />
       <module name="Flink0821" target="1.8" />
       <module name="Flink_0821" target="8" />
+      <module name="FlinkCDC" target="1.8" />
       <module name="FlinkCDC_2.0" target="1.8" />
       <module name="FlinkCDC_2.x" target="1.8" />
       <module name="Flume0821" target="1.5" />

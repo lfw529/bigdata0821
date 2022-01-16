@@ -16,7 +16,7 @@ public class Sink_Redis {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
         //2.读取端口数据并转换为JavaBean
-        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop102", 7777)
+        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop103", 7777)
                 .map(new MapFunction<String, WaterSensor>() {
                     @Override
                     public WaterSensor map(String value) throws Exception {
@@ -26,12 +26,15 @@ public class Sink_Redis {
                                 Integer.parseInt(split[2]));
                     }
                 });
+
         //3.将数据写入Redis
         FlinkJedisPoolConfig jedisPoolConfig = new FlinkJedisPoolConfig.Builder()
-                .setHost("hadoop102")
+                .setHost("hadoop103")
                 .setPort(6379)
                 .build();
-        waterSensorDS.addSink(new RedisSink<>(jedisPoolConfig, new MyRedisMapper()));
+
+        RedisSink<WaterSensor> redisSink = new RedisSink<>(jedisPoolConfig, new MyRedisMapper());
+        waterSensorDS.addSink(redisSink);
                     /*
                     key                 value(hash)
                    "sensor"               field           value

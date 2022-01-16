@@ -8,6 +8,7 @@ import org.apache.flink.connector.jdbc.JdbcSink;
 import org.apache.flink.connector.jdbc.JdbcStatementBuilder;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -18,7 +19,7 @@ public class Sink_JDBC {
         env.setParallelism(1);
 
         //2.读取端口数据并转换为JavaBean
-        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop102", 8888)
+        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop102", 7777)
                 .map(new MapFunction<String, WaterSensor>() {
                     @Override
                     public WaterSensor map(String value) throws Exception {
@@ -43,11 +44,13 @@ public class Sink_JDBC {
                         preparedStatement.setInt(5, waterSensor.getVc());
                     }
                 },
-                JdbcExecutionOptions.builder().
-                        withBatchSize(1).
-                        build(),
+                JdbcExecutionOptions.builder()
+                        .withBatchSize(1000)
+                        .withBatchIntervalMs(200)
+                        .withMaxRetries(5)
+                        .build(),
                 new JdbcConnectionOptions.JdbcConnectionOptionsBuilder()
-                        .withUrl("jdbc:mysql://hadoop102:3306/test?useSSL=false")
+                        .withUrl("jdbc:mysql://hadoop102:3306/flink?useSSL=false")
                         .withDriverName("com.mysql.jdbc.Driver")
                         .withUsername("root")
                         .withPassword("1234")
