@@ -24,10 +24,8 @@ public class Window_TimeTumbling {
         //1.获取执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
-
         //2.读取端口数据
         DataStreamSource<String> socketTextStream = env.socketTextStream("hadoop102", 7777);
-
         //3.压平并转换为元组
         SingleOutputStreamOperator<Tuple2<String, Integer>> wordToOneDS = socketTextStream.flatMap(new FlatMapFunction<String, Tuple2<String, Integer>>() {
             @Override
@@ -38,13 +36,10 @@ public class Window_TimeTumbling {
                 }
             }
         });
-
         //4.按照单词分组
         KeyedStream<Tuple2<String, Integer>, String> keyedStream = wordToOneDS.keyBy(data -> data.f0);
-
         //5.开窗
         WindowedStream<Tuple2<String, Integer>, String, TimeWindow> windowedStream = keyedStream.window(TumblingProcessingTimeWindows.of(Time.seconds(5)));
-
         //6.增量聚合计算
         //方式一：sum函数
 //        SingleOutputStreamOperator<Tuple2<String, Integer>> result = windowedStream.sum(1);

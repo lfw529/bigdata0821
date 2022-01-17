@@ -29,8 +29,8 @@ public class Window_CountTumbling {
         });
         //4.按照单词分组
         KeyedStream<Tuple2<String, Integer>, String> keyedStream = wordToOneDS.keyBy(data -> data.f0);
-        //5.开启计数的滚动窗口
-        WindowedStream<Tuple2<String, Integer>, String, GlobalWindow> windowedStream = keyedStream.countWindow(5L);
+        //5.开启计数的滚动窗口 [一个窗口容纳3条数据]
+        WindowedStream<Tuple2<String, Integer>, String, GlobalWindow> windowedStream = keyedStream.countWindow(3L);
         //6.聚合计算
         SingleOutputStreamOperator<Tuple2<String, Integer>> result = windowedStream.sum(1);
         //7.打印
