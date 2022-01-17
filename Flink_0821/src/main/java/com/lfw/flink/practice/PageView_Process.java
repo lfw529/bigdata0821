@@ -33,7 +33,6 @@ public class PageView_Process {
                 }
             }
         });
-        //userBehaviorDS.print();
         //4.指定Key分组
         KeyedStream<UserBehavior, String> keyedStream = userBehaviorDS.keyBy(data -> "PV");
         //5.计算总和

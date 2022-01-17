@@ -9,8 +9,6 @@
         <option value="$PROJECT_DIR$/Hbase0821/pom.xml" />
         <option value="$PROJECT_DIR$/Phoenix0821/pom.xml" />
         <option value="$PROJECT_DIR$/Redis0821/pom.xml" />
-        <option value="$PROJECT_DIR$/SparkCoreTest0821/pom.xml" />
-        <option value="$PROJECT_DIR$/SparkSQLTest0821/pom.xml" />
         <option value="$PROJECT_DIR$/Hivefunction0821/pom.xml" />
         <option value="$PROJECT_DIR$/SparkStreaming0821/pom.xml" />
         <option value="$PROJECT_DIR$/Flink0821/pom.xml" />

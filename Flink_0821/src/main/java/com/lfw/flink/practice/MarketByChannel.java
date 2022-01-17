@@ -55,7 +55,7 @@ public class MarketByChannel {
     public static class AppMarketingDataSource extends RichSourceFunction<MarketingUserBehavior> {
         boolean canRun = true;
         Random random = new Random();
-        List<String> channels = Arrays.asList("huawwei", "xiaomi", "apple", "baidu", "qq", "oppo", "vivo");
+        List<String> channels = Arrays.asList("huawei", "xiaomi", "apple", "baidu", "qq", "oppo", "vivo");
         List<String> behaviors = Arrays.asList("download", "install", "update", "uninstall");
 
         @Override

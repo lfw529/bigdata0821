@@ -18,9 +18,7 @@
       <module fileurl="file://$PROJECT_DIR$/Phoenix0821/Phoenix0821.iml" filepath="$PROJECT_DIR$/Phoenix0821/Phoenix0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/Redis0821/Redis0821.iml" filepath="$PROJECT_DIR$/Redis0821/Redis0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/Scala_0821/Scala_0821.iml" filepath="$PROJECT_DIR$/Scala_0821/Scala_0821.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SparkCoreTest0821/SparkCoreTest0821.iml" filepath="$PROJECT_DIR$/SparkCoreTest0821/SparkCoreTest0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/SparkCoreTest_0821/SparkCoreTest_0821.iml" filepath="$PROJECT_DIR$/SparkCoreTest_0821/SparkCoreTest_0821.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SparkSQLTest0821/SparkSQLTest0821.iml" filepath="$PROJECT_DIR$/SparkSQLTest0821/SparkSQLTest0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/SparkSQLTest_0821/SparkSQLTest_0821.iml" filepath="$PROJECT_DIR$/SparkSQLTest_0821/SparkSQLTest_0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/SparkStreaming0821/SparkStreaming0821.iml" filepath="$PROJECT_DIR$/SparkStreaming0821/SparkStreaming0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spark_0821_WordCount/Spark_0821_WordCount.iml" filepath="$PROJECT_DIR$/Spark_0821_WordCount/Spark_0821_WordCount.iml" />
