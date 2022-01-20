@@ -22,6 +22,7 @@ public class Window_EventTimeTumbling_CustomerPeriod {
                     String[] split = data.split(",");
                     return new WaterSensor(split[0], Long.parseLong(split[1]), Integer.parseInt(split[2]));
                 });
+
         //3.提取数据中的时间戳字段
         WatermarkStrategy<WaterSensor> waterSensorWatermarkStrategy = new WatermarkStrategy<WaterSensor>() {
             @Override
@@ -34,6 +35,7 @@ public class Window_EventTimeTumbling_CustomerPeriod {
                 return element.getTs() * 1000L;
             }
         });
+
         SingleOutputStreamOperator<WaterSensor> waterSensorSingleOutputStreamOperator = waterSensorDS.assignTimestampsAndWatermarks(waterSensorWatermarkStrategy);
         //4.按照id分组
         KeyedStream<WaterSensor, String> keyedStream = waterSensorSingleOutputStreamOperator.keyBy(WaterSensor::getId);
@@ -47,7 +49,9 @@ public class Window_EventTimeTumbling_CustomerPeriod {
         env.execute();
     }
 
-    //自定义周期性的 Watermark 生成器
+    /**自定义周期性的 Watermark 生成器
+     * 该 watermark 生成器可以覆盖的场景是：数据源在一定程度上（<2）乱序，且窗口大小为5。
+    */
     public static class MyPeriod implements WatermarkGenerator<WaterSensor> {
         private Long maxTs; //不能在此处赋值，后面做减法会变成Long最大值，堆栈溢出
         private Long maxDelay;

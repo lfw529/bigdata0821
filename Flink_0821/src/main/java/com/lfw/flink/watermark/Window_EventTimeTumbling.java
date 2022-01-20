@@ -25,13 +25,15 @@ public class Window_EventTimeTumbling {
                     String[] split = data.split(",");
                     return new WaterSensor(split[0], Long.parseLong(split[1]), Integer.parseInt(split[2]));
                 });
-        //3.提取数据中的时间戳字段
+
+        //3.提取数据中的时间戳字段 [老版本]
 //        waterSensorDS.assignTimestampsAndWatermarks(new AscendingTimestampExtractor<WaterSensor>() {
 //            @Override
 //            public long extractAscendingTimestamp(WaterSensor element) {
 //                return element.getTs() * 1000;
 //            }
 //        });
+
         //4.1 自增的（延迟为0）
         WatermarkStrategy<WaterSensor> waterSensorWatermarkStrategy1 = WatermarkStrategy
                 .<WaterSensor>forMonotonousTimestamps()
