@@ -30,7 +30,7 @@ public class Process_OnEvent {
                 .process(new KeyedProcessFunction<String, WaterSensor, String>() {
                     @Override
                     public void processElement(WaterSensor value, Context ctx, Collector<String> out) throws Exception {
-                        System.out.println(ctx.timerService());
+                        System.out.println(ctx.timerService().currentProcessingTime());
                         ctx.timerService().registerEventTimeTimer(ctx.timestamp() + 5000);
                         out.collect(value.toString());
                     }

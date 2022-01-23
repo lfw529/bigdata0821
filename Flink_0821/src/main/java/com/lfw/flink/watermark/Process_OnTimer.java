@@ -1,9 +1,10 @@
 package com.lfw.flink.watermark;
 
 import com.lfw.flink.bean.WaterSensor;
+import org.apache.flink.streaming.api.datastream.KeyedStream;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-import org.apache.flink.streaming.api.functions.ProcessFunction;
+import org.apache.flink.streaming.api.functions.KeyedProcessFunction;
 import org.apache.flink.util.Collector;
 
 public class Process_OnTimer {
@@ -18,13 +19,14 @@ public class Process_OnTimer {
                     return new WaterSensor(split[0], Long.parseLong(split[1]), Integer.parseInt(split[2]));
                 });
         //3.使用ProcessFunction的定时器功能
-        waterSensorDS.keyBy(WaterSensor::getId).process(new ProcessFunction<WaterSensor, WaterSensor>() {
+        KeyedStream<WaterSensor, String> keyedStream = waterSensorDS.keyBy(WaterSensor::getId);
+        keyedStream.process(new KeyedProcessFunction<String, WaterSensor, WaterSensor>() {
             @Override
             public void processElement(WaterSensor value, Context ctx, Collector<WaterSensor> out) throws Exception {
                 //获取当前数据的处理时间
                 long ts = ctx.timerService().currentProcessingTime();
                 System.out.println(ts);
-                //注册定时器
+                //注册定时器, 1s注册一个
                 ctx.timerService().registerProcessingTimeTimer(ts + 1000L);
                 //输出数据
                 out.collect(value);
@@ -33,7 +35,7 @@ public class Process_OnTimer {
             //注册的定义器响起，触发动作
             @Override
             public void onTimer(long timestamp, OnTimerContext ctx, Collector<WaterSensor> out) throws Exception {
-                System.out.println("定时器触发：" + timestamp);
+                System.out.println("定时器触发：" + timestamp);  //只有有数据流入时才会触发
                 long ts = ctx.timerService().currentProcessingTime();
                 ctx.timerService().registerProcessingTimeTimer(ts + 1000L);  //注册下一个定时器，递归过程
             }

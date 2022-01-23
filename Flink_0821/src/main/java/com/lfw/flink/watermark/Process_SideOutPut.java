@@ -23,7 +23,6 @@ public class Process_SideOutPut {
                 });
         //3.使用ProcessFunction将数据分流
         SingleOutputStreamOperator<WaterSensor> result = waterSensorDS.process(new SplitProcessFunc());
-
         //4.打印数据
         result.print("主流");
         DataStream<Tuple2<String, Integer>> sideOutput = result.getSideOutput(new OutputTag<Tuple2<String, Integer>>("SideOut") {

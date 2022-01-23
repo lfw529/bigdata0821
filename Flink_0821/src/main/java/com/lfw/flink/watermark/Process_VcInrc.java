@@ -31,13 +31,12 @@ public class Process_VcInrc {
                 System.out.println(lastVc);
                 //取出水位线
                 Integer vc = value.getVc();
-
                 //将当前水位线与上一次进行比较
                 if (vc > lastVc && timerTs == Long.MIN_VALUE) {
                     //注册定时器
-                    long ts = ctx.timerService().currentProcessingTime() + 10000L;
+                    long ts = ctx.timerService().currentProcessingTime() + 10000L;  //10s 定时器
                     System.out.println("注册定时器：" + ts);
-                    ctx.timerService().registerProcessingTimeTimer(ts);
+                    ctx.timerService().registerProcessingTimeTimer(ts);  //物理时间 10s
 
                     //更新上一次水位线值，定时器的时间戳
                     timerTs = ts;
