@@ -1,6 +1,7 @@
 package com.lfw.flink.watermark;
 
 import com.lfw.flink.bean.WaterSensor;
+
 import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.streaming.api.datastream.KeyedStream;
