@@ -18,13 +18,15 @@ public class State_ReducingState {
         env.setParallelism(1);
 
         //2.读取端口数据并转换为JavaBean
-        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop105", 7777)
+        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop102", 7777)
                 .map(data -> {
                     String[] split = data.split(",");
                     return new WaterSensor(split[0], Long.parseLong(split[1]), Integer.parseInt(split[2]));
                 });
+
         //3.按照传感器ID分组
         KeyedStream<WaterSensor, String> keyedStream = waterSensorDS.keyBy(WaterSensor::getId);
+
         //4.使用状态编程的方式实现累加传感器的水位线
         keyedStream.process(new KeyedProcessFunction<String, WaterSensor, WaterSensor>() {
             //定义状态

@@ -1,14 +1,14 @@
 package com.lfw.flink.state;
 
-        import com.lfw.flink.bean.WaterSensor;
-        import org.apache.flink.api.common.functions.RichFlatMapFunction;
-        import org.apache.flink.api.common.state.ValueState;
-        import org.apache.flink.api.common.state.ValueStateDescriptor;
-        import org.apache.flink.configuration.Configuration;
-        import org.apache.flink.streaming.api.datastream.KeyedStream;
-        import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
-        import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-        import org.apache.flink.util.Collector;
+import com.lfw.flink.bean.WaterSensor;
+import org.apache.flink.api.common.functions.RichFlatMapFunction;
+import org.apache.flink.api.common.state.ValueState;
+import org.apache.flink.api.common.state.ValueStateDescriptor;
+import org.apache.flink.configuration.Configuration;
+import org.apache.flink.streaming.api.datastream.KeyedStream;
+import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
+import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import org.apache.flink.util.Collector;
 
 
 public class State_ValueState {
@@ -18,13 +18,15 @@ public class State_ValueState {
         env.setParallelism(1);
 
         //2.读取端口数据并转为JavaBean
-        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop105", 7777)
+        SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop102", 7777)
                 .map(data -> {
                     String[] split = data.split(",");
                     return new WaterSensor(split[0], Long.parseLong(split[1]), Integer.parseInt(split[2]));
                 });
+
         //3.按照传感器id分组
         KeyedStream<WaterSensor, String> keyedStream = waterSensorDS.keyBy(WaterSensor::getId);
+
         //4.使用RichFunction实现水位线跳变报警需求
         keyedStream.flatMap(new RichFlatMapFunction<WaterSensor, String>() {
             //定义状态

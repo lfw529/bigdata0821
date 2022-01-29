@@ -26,6 +26,7 @@ public class Process_VcInrc_ByState {
 
         //3.按照传感器ID分组
         KeyedStream<WaterSensor, String> keyedStream = waterSensorDS.keyBy(WaterSensor::getId);
+
         //4.使用ProcessFunction实现连续时间内水位不下降，则报警，且将报警信息输出到侧输出流，此时已经根据key分组区分
         SingleOutputStreamOperator<WaterSensor> result = keyedStream.process(new KeyedProcessFunction<String, WaterSensor, WaterSensor>() {
             //定义状态
