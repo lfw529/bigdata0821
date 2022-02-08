@@ -1,6 +1,7 @@
 package com.lfw.flink.watermark;
 
 import com.lfw.flink.bean.WaterSensor;
+import org.apache.flink.runtime.messages.checkpoint.AbstractCheckpointMessage;
 import org.apache.flink.streaming.api.datastream.KeyedStream;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
@@ -12,13 +13,14 @@ public class Process_VcInrc {
     public static void main(String[] args) throws Exception {
         //1.获取执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.setParallelism(1);
+        env.setParallelism(8);
         //2.读取端口数据并转换为JavaBean
         SingleOutputStreamOperator<WaterSensor> waterSensorDS = env.socketTextStream("hadoop102", 7777)
                 .map(data -> {
                     String[] split = data.split(",");
                     return new WaterSensor(split[0], Long.parseLong(split[1]), Integer.parseInt(split[2]));
                 });
+
         //3.按照传感器 ID 分组
         KeyedStream<WaterSensor, String> keyedStream = waterSensorDS.keyBy(WaterSensor::getId);
         //4.使用ProcessFunction实现连续时间内水位不下降，则报警，且将报警信息输出到侧输出流

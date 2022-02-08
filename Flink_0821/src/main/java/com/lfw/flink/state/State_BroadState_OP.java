@@ -1,8 +1,9 @@
 package com.lfw.flink.state;
 
-import org.apache.flink.api.common.state.BroadcastState;
-import org.apache.flink.api.common.state.MapStateDescriptor;
-import org.apache.flink.api.common.state.ReadOnlyBroadcastState;
+import org.apache.flink.api.common.state.*;
+import org.apache.flink.runtime.state.SnapshotStrategy;
+import org.apache.flink.runtime.state.StateBackend;
+import org.apache.flink.runtime.state.internal.InternalKvState;
 import org.apache.flink.streaming.api.datastream.BroadcastConnectedStream;
 import org.apache.flink.streaming.api.datastream.BroadcastStream;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
@@ -15,10 +16,10 @@ public class State_BroadState_OP {
         //1.获取执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
-
+        
         //2.读取流中的数据
-        DataStreamSource<String> propertiesStream = env.socketTextStream("hadoop105", 7777);
-        DataStreamSource<String> dataStream = env.socketTextStream("hadoop105", 8888);
+        DataStreamSource<String> propertiesStream = env.socketTextStream("hadoop102", 7777);
+        DataStreamSource<String> dataStream = env.socketTextStream("hadoop102", 8888);
 
         //3.定义状态并广播
         MapStateDescriptor<String, String> mapStateDescriptor = new MapStateDescriptor<String, String>("map-state", String.class, String.class);

@@ -13,8 +13,8 @@ public class State_Backend {
 
         //定义状态后端，保存状态的位置
         env.setStateBackend(new MemoryStateBackend());
-        env.setStateBackend(new FsStateBackend("hdfs:hadoop105:8020/flink/ck"));
-        env.setStateBackend(new RocksDBStateBackend("hdfs:hadoop105:8020/flink/ck"));
+        env.setStateBackend(new FsStateBackend("hdfs:hadoop102:8020/flink/ck"));
+        env.setStateBackend(new RocksDBStateBackend("hdfs:hadoop102:8020/flink/ck"));
 
         //开启CK
         env.getCheckpointConfig().enableUnalignedCheckpoints();
