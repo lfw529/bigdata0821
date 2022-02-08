@@ -34,7 +34,7 @@ public class Practice_ItemCountTopN {
         env.setParallelism(1);
 
         //2.读取文本数据
-        DataStreamSource<String> readTextFile = env.readTextFile("D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\UserBehavior.csv");
+        DataStreamSource<String> readTextFile = env.readTextFile("Flink_0821/src/main/resources/UserBehavior.csv");
 
         //3.转换为JavaBean，根据行为过滤数据，并提取时间戳生成Watermark
         WatermarkStrategy<UserBehavior> userBehaviorWatermarkStrategy = WatermarkStrategy.<UserBehavior>forMonotonousTimestamps()

@@ -27,7 +27,7 @@ public class Practice_UserVisitor_Window2 {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         //2.读取文本数据
-        DataStreamSource<String> readTextFile = env.readTextFile("D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\UserBehavior.csv");
+        DataStreamSource<String> readTextFile = env.readTextFile("Flink_0821/src/main/resources/UserBehavior.csv");
 
         //3.转换为JavaBean,根据行为过滤数据，并提取时间戳生成Watermark
         WatermarkStrategy<UserBehavior> userBehaviorWatermarkStrategy = WatermarkStrategy.<UserBehavior>forMonotonousTimestamps()
@@ -100,7 +100,7 @@ public class Practice_UserVisitor_Window2 {
 
         @Override
         public void open(Configuration parameters) throws Exception {
-            jedis = new Jedis("hadoop105", 6379);
+            jedis = new Jedis("hadoop102", 6379);
             hourUvCountKey = "HourUv";
             myBloomFilter = new MyBloomFilter(1 << 30);
         }

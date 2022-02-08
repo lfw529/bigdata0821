@@ -42,7 +42,7 @@ public class Practice_HotUrl {
                         return element.getTs();
                     }
                 });
-        SingleOutputStreamOperator<ApacheLog> apacheLogDS = env.socketTextStream("hadoop105", 7777)
+        SingleOutputStreamOperator<ApacheLog> apacheLogDS = env.socketTextStream("hadoop102", 7777)
                 .map(data -> {
                     String[] split = data.split(" ");
                     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy:HH:mm:ss");
