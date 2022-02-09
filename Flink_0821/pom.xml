@@ -63,13 +63,6 @@
             <artifactId>flink-connector-kafka_2.11</artifactId>
             <version>${flink.version}</version>
         </dependency>
-        <!--hadoop 客户端-->
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-client</artifactId>
-            <version>3.1.3</version>
-            <scope>provided</scope>
-        </dependency>
         <!--json解析-->
         <dependency>
             <groupId>com.alibaba</groupId>
