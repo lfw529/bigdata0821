@@ -17,7 +17,7 @@ public class State_WordCount {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //设置状态后端
         env.getCheckpointConfig().setCheckpointStorage(new FileSystemCheckpointStorage("hdfs://hadoop102:8020/flink/ck"));
-        //env.setStateBackend(new FsStateBackend("hdfs://hadoop102:8020/flink"));
+        //env.setStateBackend(new FsStateBackend("hdfs://hadoop102:8020/flink/ck"));
         //开启CK, 每 5000ms 开始一次 checkpoint
         env.enableCheckpointing(5000);
 
