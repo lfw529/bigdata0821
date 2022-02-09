@@ -33,7 +33,7 @@ public class Practice_AdCount {
                         return element.getTimestamp() * 1000L;
                     }
                 });
-        SingleOutputStreamOperator<AdsClickLog> adsClickLogDS = env.readTextFile("E:\\IdeaProject\\bigdata0821\\Flink_0821\\src\\main\\resources\\AdClickLog.csv")
+        SingleOutputStreamOperator<AdsClickLog> adsClickLogDS = env.readTextFile("Flink_0821/src/main/resources/AdClickLog.csv")
                 .map(data -> {
                     String[] split = data.split(",");
                     return new AdsClickLog(Long.parseLong(split[0]),
@@ -97,7 +97,6 @@ public class Practice_AdCount {
     }
 
     public static class BlackListProcessFunc extends KeyedProcessFunction<String, AdsClickLog, AdsClickLog> {
-
         //定义最大的点击次数属性
         private Long maxClickCount;
 
@@ -125,7 +124,7 @@ public class Practice_AdCount {
             if (count == null) {
                 //赋值为1
                 countState.update(1L);
-                //注册第二天凌晨的定时器，用于清空状态
+                //注册第二天凌晨的定时器，用于清空状态 [注意时区]
                 long ts = (value.getTimestamp() / (60 * 60 * 24) + 1) * (24 * 60 * 60 * 1000L) - 8 * 60 * 60 * 1000L;
 //                System.out.println(new Timestamp(ts));
                 ctx.timerService().registerEventTimeTimer(ts);
