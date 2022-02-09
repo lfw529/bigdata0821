@@ -1,6 +1,5 @@
 package com.lfw.flink.adv_practice;
 
-
 import com.lfw.flink.bean.OrderEvent;
 import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
@@ -30,8 +29,8 @@ public class Practice_OrderPay {
                         return element.getEventTime() * 1000L;
                     }
                 });
-//        SingleOutputStreamOperator<OrderEvent> orderEventDS = env.readTextFile("D:\IdeaProjects\bigdata0821\Flink_0821\src\main\resources\OrderLog.csv")
-        SingleOutputStreamOperator<OrderEvent> orderEventDS = env.socketTextStream("hadoop105", 7777)
+//        SingleOutputStreamOperator<OrderEvent> orderEventDS = env.readTextFile("Flink_0821/src/main/resources/OrderLog.csv")
+        SingleOutputStreamOperator<OrderEvent> orderEventDS = env.socketTextStream("hadoop102", 7777)
                 .map(data -> {
                     String[] split = data.split(",");
                     return new OrderEvent(Long.parseLong(split[0]),

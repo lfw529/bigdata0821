@@ -27,7 +27,7 @@ public class Practice_LoginApp2 {
                         return element.getEventTime() * 1000L;
                     }
                 });
-        SingleOutputStreamOperator<LoginEvent> loginEventDS = env.readTextFile("D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\LoginLog.csv")
+        SingleOutputStreamOperator<LoginEvent> loginEventDS = env.readTextFile("Flink_0821/src/main/resources/LoginLog.csv")
                 .map(data -> {
                     String[] split = data.split(",");
                     return new LoginEvent(Long.parseLong(split[0]),
@@ -62,7 +62,7 @@ public class Practice_LoginApp2 {
 
         @Override
         public void open(Configuration parameters) throws Exception {
-            failEventState = getRuntimeContext().getState(new ValueStateDescriptor<LoginEvent>("fail-state",LoginEvent.class));
+            failEventState = getRuntimeContext().getState(new ValueStateDescriptor<LoginEvent>("fail-state", LoginEvent.class));
         }
 
         @Override

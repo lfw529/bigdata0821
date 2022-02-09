@@ -24,8 +24,8 @@ public class Practice_OrderReceiptWithState {
         env.setParallelism(1);
 
         //2.读取2个文本数据创建流
-        DataStreamSource<String> orderStreamDS = env.readTextFile("D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\OrderLog.csv");
-        DataStreamSource<String> receiptStreamDS = env.readTextFile("D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\ReceiptLog.csv");
+        DataStreamSource<String> orderStreamDS = env.readTextFile("Flink_0821/src/main/resources/OrderLog.csv");
+        DataStreamSource<String> receiptStreamDS = env.readTextFile("Flink_0821/src/main/resources/ReceiptLog.csv");
 
         //3.转换为JavaBean并提取数据中的时间戳生成Watermark
         WatermarkStrategy<OrderEvent> orderEventWatermarkStrategy = WatermarkStrategy.<OrderEvent>forMonotonousTimestamps()

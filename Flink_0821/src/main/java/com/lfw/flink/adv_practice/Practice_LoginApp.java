@@ -32,7 +32,7 @@ public class Practice_LoginApp {
                         return element.getEventTime() * 1000L;
                     }
                 });
-        SingleOutputStreamOperator<LoginEvent> loginEventDS = env.readTextFile("D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\LoginLog.csv")
+        SingleOutputStreamOperator<LoginEvent> loginEventDS = env.readTextFile("Flink_0821/src/main/resources/LoginLog.csv")
                 .map(data -> {
                     String[] split = data.split(",");
                     return new LoginEvent(Long.parseLong(split[0]),
