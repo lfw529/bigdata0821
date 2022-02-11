@@ -150,7 +150,7 @@ public class CombinationCep {
 
         // 定义模式
         Pattern<WaterSensor, WaterSensor> beginPattern = Pattern
-                .<WaterSensor>begin("start")
+                .<WaterSensor>begin("begin")
                 .where(new SimpleCondition<WaterSensor>() {
                     @Override
                     public boolean filter(WaterSensor value) throws Exception {
