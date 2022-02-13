@@ -33,7 +33,7 @@ public class State_WordCount {
         //同一时间只允许一个 checkpoint 进行
         env.getCheckpointConfig().setMaxConcurrentCheckpoints(1);
         //使用 externalized checkpoints，这样 checkpoint 在作业取消后仍旧会被保留[Cancel 任务时不删除CK]
-        env.getCheckpointConfig().enableExternalizedCheckpoints(CheckpointConfig.ExternalizedCheckpointCleanup.RETAIN_ON_CANCELLATION);
+        env.getCheckpointConfig().setExternalizedCheckpointCleanup(CheckpointConfig.ExternalizedCheckpointCleanup.RETAIN_ON_CANCELLATION);
         // 开启实验性的 unaligned checkpoints
         env.getCheckpointConfig().enableUnalignedCheckpoints();
 
