@@ -1,4 +1,4 @@
-package com.lfw.flink.adv_practice;
+package com.lfw.flink.cep;
 
 import com.lfw.flink.bean.OrderEvent;
 import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
@@ -32,7 +32,7 @@ public class Practice_OrderPayWithCEP {
                         return element.getEventTime() * 1000L;
                     }
                 });
-        SingleOutputStreamOperator<OrderEvent> orderEventDS = env.readTextFile("D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\OrderLog.csv")
+        SingleOutputStreamOperator<OrderEvent> orderEventDS = env.readTextFile("Flink_0821/src/main/resources/OrderLog.csv")
                 .map(data -> {
                     String[] split = data.split(",");
                     return new OrderEvent(Long.parseLong(split[0]),

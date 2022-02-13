@@ -1,5 +1,6 @@
-package com.lfw.flink.adv_practice;
+package com.lfw.flink.cep;
 
+import com.lfw.flink.adv_practice.LoginEvent;
 import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.cep.CEP;
@@ -30,7 +31,7 @@ public class Practice_LoginFailWithCEP {
                         return element.getEventTime() * 1000L;
                     }
                 });
-        SingleOutputStreamOperator<LoginEvent> loginEventDS = env.readTextFile("D:\\IdeaProjects\\bigdata0821\\Flink_0821\\src\\main\\resources\\LoginLog.csv")
+        SingleOutputStreamOperator<LoginEvent> loginEventDS = env.readTextFile("Flink_0821/src/main/resources/LoginLog.csv")
                 .map(data -> {
                     String[] split = data.split(",");
                     return new LoginEvent(Long.parseLong(split[0]),
@@ -57,11 +58,11 @@ public class Practice_LoginFailWithCEP {
 
         /** 使用模式组模式 */
         Pattern<LoginEvent, LoginEvent> loginEventPattern = Pattern.<LoginEvent>begin("start").where(new SimpleCondition<LoginEvent>() {
-            @Override
-            public boolean filter(LoginEvent value) throws Exception {
-                return "fail".equals(value.getEventType());
-            }
-        })
+                    @Override
+                    public boolean filter(LoginEvent value) throws Exception {
+                        return "fail".equals(value.getEventType());
+                    }
+                })
                 .times(2)      //默认使用的为宽松近邻
                 .consecutive() //指定使用严格近邻模式  [用于解决乱序数据情况]
                 .within(Time.seconds(5));
