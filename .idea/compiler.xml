@@ -70,20 +70,20 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Azkaban0821" target="1.5" />
-      <module name="Collect0821" target="1.5" />
+      <module name="Azkaban0821" target="1.8" />
+      <module name="Collect0821" target="1.8" />
       <module name="Flink0821" target="1.8" />
       <module name="Flink_0821" target="8" />
-      <module name="FlinkCDC" target="1.5" />
+      <module name="FlinkCDC" target="1.8" />
       <module name="FlinkCDC_2.0" target="1.5" />
       <module name="FlinkCDC_2.x" target="1.8" />
       <module name="FlinkTest" target="8" />
       <module name="Flume0821" target="1.5" />
       <module name="Flume_0821" target="1.8" />
-      <module name="gmall-canal" target="8" />
+      <module name="gmall-canal" target="1.8" />
       <module name="Hadoop_0821" target="1.8" />
       <module name="hbase" target="1.8" />
-      <module name="Hbase0821" target="1.5" />
+      <module name="Hbase0821" target="1.8" />
       <module name="HDFS_0821" target="1.8" />
       <module name="HFDS0821" target="1.8" />
       <module name="Hive" target="1.8" />
@@ -130,28 +130,28 @@
       <module name="hive-webhcat" target="1.8" />
       <module name="hive-webhcat-java-client" target="1.8" />
       <module name="Hive0821" target="8" />
-      <module name="Hivefunction0821" target="1.5" />
+      <module name="Hivefunction0821" target="1.8" />
       <module name="kafka0821" target="1.8" />
-      <module name="Kafka0821" target="1.5" />
+      <module name="Kafka0821" target="1.8" />
       <module name="MapReduce0821" target="1.8" />
       <module name="MapReduce_0821" target="1.8" />
-      <module name="momo_chat_app" target="1.5" />
-      <module name="Phoenix0821" target="1.5" />
-      <module name="Redis0821" target="1.5" />
+      <module name="momo_chat_app" target="1.8" />
+      <module name="Phoenix0821" target="1.8" />
+      <module name="Redis0821" target="1.8" />
       <module name="Scala0821" target="1.8" />
-      <module name="Scala_0821" target="1.5" />
+      <module name="Scala_0821" target="1.8" />
       <module name="Spark0821" target="1.5" />
-      <module name="Spark_0821_WordCount" target="8" />
+      <module name="Spark_0821_WordCount" target="1.8" />
       <module name="SparkCoreTest0821" target="1.5" />
-      <module name="SparkCoreTest_0821" target="8" />
+      <module name="SparkCoreTest_0821" target="1.8" />
       <module name="SparkSQLTest0821" target="1.5" />
-      <module name="SparkSQLTest_0821" target="1.5" />
-      <module name="SparkStreaming0821" target="1.5" />
+      <module name="SparkSQLTest_0821" target="1.8" />
+      <module name="SparkStreaming0821" target="1.8" />
       <module name="untitled1" target="1.8" />
       <module name="YarnDemo" target="1.8" />
       <module name="YarnTool" target="7" />
       <module name="Zookeeper0821" target="1.5" />
-      <module name="ZooKeeper_0821" target="8" />
+      <module name="ZooKeeper_0821" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
