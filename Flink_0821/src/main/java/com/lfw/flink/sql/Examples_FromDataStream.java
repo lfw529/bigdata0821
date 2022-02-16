@@ -33,7 +33,6 @@ public class Examples_FromDataStream {
 
     StreamTableEnvironment tableEnv = StreamTableEnvironment.create(env);
 
-
     DataStream<User> dataStream =
             env.fromElements(
                     new User("Alice", 4, Instant.ofEpochMilli(1000)),
