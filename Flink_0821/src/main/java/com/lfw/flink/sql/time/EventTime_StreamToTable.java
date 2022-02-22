@@ -1,4 +1,4 @@
-package com.lfw.flink.flinksql2;
+package com.lfw.flink.sql.time;
 
 import com.lfw.flink.bean.WaterSensor;
 import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;

@@ -45,8 +45,8 @@ public class FlinkCDC {
         MySqlSource<String> mysqlSource = MySqlSource.<String>builder()
                 .hostname("hadoop102")
                 .port(3306)
-                .databaseList("flink-cdc")
-                .tableList("flink-cdc.test01") //可选配置项，如果不指定该参数，则会读取上一个配置下所有表的数据，注意：指定的时候需要使用"db.table"的方式
+                .databaseList("finkcdc")
+                .tableList("finkcdc.test01") //可选配置项，如果不指定该参数，则会读取上一个配置下所有表的数据，注意：指定的时候需要使用"db.table"的方式
                 .username("root")
                 .password("1234")
                 .deserializer(new JsonDebeziumDeserializationSchema())  //官方提供的序列化
