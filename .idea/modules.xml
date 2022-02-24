@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/Hive.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/Hive.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hive0821/Hive0821.iml" filepath="$PROJECT_DIR$/Hive0821/Hive0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hivefunction0821/Hivefunction0821.iml" filepath="$PROJECT_DIR$/Hivefunction0821/Hivefunction0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Kafka/Kafka.iml" filepath="$PROJECT_DIR$/Kafka/Kafka.iml" />
       <module fileurl="file://$PROJECT_DIR$/Kafka0821/Kafka0821.iml" filepath="$PROJECT_DIR$/Kafka0821/Kafka0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hadoop_0821/MapReduce_0821/MapReduce_0821.iml" filepath="$PROJECT_DIR$/Hadoop_0821/MapReduce_0821/MapReduce_0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/Phoenix0821/Phoenix0821.iml" filepath="$PROJECT_DIR$/Phoenix0821/Phoenix0821.iml" />

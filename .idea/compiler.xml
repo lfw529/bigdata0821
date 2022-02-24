@@ -40,6 +40,7 @@
         <module name="Flink_0821" />
         <module name="hive-hcatalog-server-extensions" />
         <module name="hive-streaming" />
+        <module name="Kafka" />
         <module name="hive-common" />
         <module name="momo_chat_app" />
         <module name="Azkaban0821" />
@@ -131,6 +132,7 @@
       <module name="hive-webhcat-java-client" target="1.8" />
       <module name="Hive0821" target="8" />
       <module name="Hivefunction0821" target="1.8" />
+      <module name="Kafka" target="1.8" />
       <module name="kafka0821" target="1.8" />
       <module name="Kafka0821" target="1.8" />
       <module name="MapReduce0821" target="1.8" />
