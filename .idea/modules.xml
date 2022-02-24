@@ -13,7 +13,6 @@
       <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/Hive.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/Hive.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hive0821/Hive0821.iml" filepath="$PROJECT_DIR$/Hive0821/Hive0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hivefunction0821/Hivefunction0821.iml" filepath="$PROJECT_DIR$/Hivefunction0821/Hivefunction0821.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Kafka/Kafka.iml" filepath="$PROJECT_DIR$/Kafka/Kafka.iml" />
       <module fileurl="file://$PROJECT_DIR$/Kafka0821/Kafka0821.iml" filepath="$PROJECT_DIR$/Kafka0821/Kafka0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hadoop_0821/MapReduce_0821/MapReduce_0821.iml" filepath="$PROJECT_DIR$/Hadoop_0821/MapReduce_0821/MapReduce_0821.iml" />
       <module fileurl="file://$PROJECT_DIR$/Phoenix0821/Phoenix0821.iml" filepath="$PROJECT_DIR$/Phoenix0821/Phoenix0821.iml" />
@@ -68,6 +67,7 @@
       <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/vector-code-gen/hive-vector-code-gen.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/vector-code-gen/hive-vector-code-gen.iml" />
       <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/hcatalog/webhcat/svr/hive-webhcat.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/hcatalog/webhcat/svr/hive-webhcat.iml" />
       <module fileurl="file://$PROJECT_DIR$/apache-hive-3.1.2-src/hcatalog/webhcat/java-client/hive-webhcat-java-client.iml" filepath="$PROJECT_DIR$/apache-hive-3.1.2-src/hcatalog/webhcat/java-client/hive-webhcat-java-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Kafka/kafka.iml" filepath="$PROJECT_DIR$/Kafka/kafka.iml" />
       <module fileurl="file://$PROJECT_DIR$/momo_chat_app/momo_chat_app.iml" filepath="$PROJECT_DIR$/momo_chat_app/momo_chat_app.iml" />
     </modules>
   </component>
