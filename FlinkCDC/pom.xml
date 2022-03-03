@@ -147,6 +147,12 @@
         <!--            <artifactId>HikariCP</artifactId>-->
         <!--            <version>4.0.3</version>-->
         <!--        </dependency>-->
+
+        <dependency>
+            <groupId>io.debezium</groupId>
+            <artifactId>debezium-embedded</artifactId>
+            <version>1.5.4.Final</version>
+        </dependency>
     </dependencies>
 
     <build>

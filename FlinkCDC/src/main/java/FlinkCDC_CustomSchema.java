@@ -1,8 +1,10 @@
+import com.alibaba.fastjson.JSONObject;
 import com.ververica.cdc.connectors.mysql.source.MySqlSource;
 import com.ververica.cdc.debezium.DebeziumDeserializationSchema;
 import io.debezium.data.Envelope;
-import org.apache.avro.Schema;
+import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.restartstrategy.RestartStrategies;
+import org.apache.flink.api.common.typeinfo.BasicTypeInfo;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.runtime.state.hashmap.HashMapStateBackend;
 import org.apache.flink.runtime.state.storage.FileSystemCheckpointStorage;
@@ -11,8 +13,10 @@ import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.CheckpointConfig;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.util.Collector;
+import org.apache.kafka.connect.data.Field;
 import org.apache.kafka.connect.source.SourceRecord;
 import org.apache.kafka.connect.data.Struct;
+
 
 public class FlinkCDC_CustomSchema {
     public static void main(String[] args) throws Exception {
@@ -39,17 +43,17 @@ public class FlinkCDC_CustomSchema {
         MySqlSource<String> mysqlSource = MySqlSource.<String>builder()
                 .hostname("hadoop102")
                 .port(3306)
-                .databaseList("finkcdc")
-                .tableList("finkcdc.test01") //可选配置项，如果不指定该参数，则会读取上一个配置下所有表的数据，注意：指定的时候需要使用"db.table"的方式
+                .databaseList("flink-cdc")
+                .tableList("flink-cdc.test01") //可选配置项，如果不指定该参数，则会读取上一个配置下所有表的数据，注意：指定的时候需要使用"db.table"的方式
                 .username("root")
                 .password("1234")
                 .deserializer(new MyDeserializationSchema())  //官方提供的序列化
                 .build();
 
-        DataStreamSource<String> streamSource = env.addSource(mysqlSource);
+        DataStreamSource<String> mysqlDS = env.fromSource(mysqlSource, WatermarkStrategy.noWatermarks(), "MySQL Source");
 
         //3.打印
-        streamSource.print();
+        mysqlDS.print();
 
         //4.启动
         env.execute();
@@ -83,13 +87,26 @@ public class FlinkCDC_CustomSchema {
             //获取变化后的数据
             Struct after = value.getStruct("after");
 
-            //创建 Avro 对象用于存储数据信息
-            Schema schema = new Schema.Parser().parse()
+            JSONObject jsonObject = new JSONObject();
+            for (Field field : after.schema().fields()) {
+                Object o = after.get(field);
+                jsonObject.put(field.name(), o);
+            }
+
+            //创建结果类型
+            JSONObject result = new JSONObject();
+            result.put("database", db);
+            result.put("tableName", tableName);
+            result.put("data", jsonObject);
+            result.put("op", operation);
+
+            //输出数据
+            collector.collect(result.toJSONString());
         }
 
         @Override
         public TypeInformation<String> getProducedType() {
-            return TypeInformation.of(String.class);
+            return BasicTypeInfo.STRING_TYPE_INFO;
         }
     }
 }

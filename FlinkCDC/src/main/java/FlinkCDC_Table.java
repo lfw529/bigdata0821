@@ -11,7 +11,7 @@ public class FlinkCDC_Table {
         //2.创建Flink-MySQL-CDC的Source
         tableEnv.executeSql("CREATE TABLE test01 (" +
                 "  id STRING," +
-                "  NAME STRING," +
+                "  name STRING," +
                 "  sex STRING," +
                 "  primary key(id) not enforced" +
                 ") WITH (" +
@@ -20,7 +20,7 @@ public class FlinkCDC_Table {
                 "  'port' = '3306'," +
                 "  'username' = 'root'," +
                 "  'password' = '1234'," +
-                "  'database-name' = 'finkcdc'," +
+                "  'database-name' = 'flink-cdc'," +
                 "  'table-name' = 'test01'" +
                 ")");
 
