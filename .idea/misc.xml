@@ -4,7 +4,6 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/Hive0821/pom.xml" />
-        <option value="$PROJECT_DIR$/Kafka0821/pom.xml" />
         <option value="$PROJECT_DIR$/Collect0821/pom.xml" />
         <option value="$PROJECT_DIR$/Hbase0821/pom.xml" />
         <option value="$PROJECT_DIR$/Phoenix0821/pom.xml" />

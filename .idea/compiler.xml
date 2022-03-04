@@ -49,7 +49,6 @@
         <module name="hive-hplsql" />
         <module name="Scala_0821" />
         <module name="SparkCoreTest_0821" />
-        <module name="Kafka0821" />
         <module name="hive-hcatalog-core" />
         <module name="FlinkCDC" />
         <module name="YarnTool" />
